@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="77335e8e4d6a47279cf0584434fddf74" Name="Diagram1">
+        <EntityTypeShape EntityType="bolsaTrabajoModel.aplicacion_notas" Width="1.5" PointX="18" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.candidatos_ofertas" Width="1.5" PointX="12.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.criterios" Width="1.5" PointX="13.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.curriculum" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.detalle_permisos" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.empleados" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.exp_profesional" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.form_academica" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.idiomas" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.instituciones" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.ofertas" Width="1.5" PointX="10.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.ofertas_criterios" Width="1.5" PointX="15.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.permisos" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.refer_personales" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.tipos_usuarios" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.usuarios" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__aplicacio__id_ca__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__aplicacio__id_of__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__candidato__id_cu__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__candidato__id_of__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__ofertas_c__id_cr__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__curriculu__id_ex__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__curriculu__id_fo__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__curriculu__id_id__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__curriculu__id_re__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__curriculu__id_us__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__detalle_p__id_pe__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__detalle_p__id_ti__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__empleados__id_in__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__empleados__id_us__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__ofertas__id_empl__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__ofertas_c__id_of__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__usuarios__id_tip__182C9B23" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
