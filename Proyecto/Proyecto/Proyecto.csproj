@@ -134,27 +134,76 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="BolsaTrabajoModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BolsaTrabajoModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BolsaTrabajoModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BolsaTrabajoModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\aplicacion_notas.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BolsaTrabajoModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BolsaTrabajoModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BolsaTrabajoModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BolsaTrabajoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BolsaTrabajoModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\candidatos_ofertas.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\criterios.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\curriculum.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\detalle_permisos.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\empleados.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\exp_profesional.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\form_academica.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\idiomas.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\instituciones.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ofertas.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ofertas_criterios.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\permisos.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\refer_personales.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tipos_usuarios.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usuarios.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BolsaTrabajoModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BolsaTrabajoModel.Context.cs</LastGenOutput>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -163,15 +212,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\BolsaTrabajoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BolsaTrabajoModel.edmx</DependentUpon>
+      <LastGenOutput>BolsaTrabajoModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BolsaTrabajoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BolsaTrabajoModel.edmx</DependentUpon>
+      <LastGenOutput>BolsaTrabajoModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="BolsaTrabajoModel.edmx">
+    <EntityDeploy Include="Models\BolsaTrabajoModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BolsaTrabajoModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="BolsaTrabajoModel.edmx.diagram">
+    <Content Include="Models\BolsaTrabajoModel.edmx.diagram">
       <DependentUpon>BolsaTrabajoModel.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -200,7 +259,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
