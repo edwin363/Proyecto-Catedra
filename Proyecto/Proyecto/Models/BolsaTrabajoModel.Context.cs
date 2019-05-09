@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Proyecto
+namespace Proyecto.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class bolsaTrabajoEntities : DbContext
+    public partial class bolsaTrabajoEntities1 : DbContext
     {
-        public bolsaTrabajoEntities()
-            : base("name=bolsaTrabajoEntities")
+        public bolsaTrabajoEntities1()
+            : base("name=bolsaTrabajoEntities1")
         {
         }
     

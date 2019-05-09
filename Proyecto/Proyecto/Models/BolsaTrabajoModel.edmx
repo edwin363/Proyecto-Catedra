@@ -860,7 +860,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="bolsaTrabajoEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="bolsaTrabajoEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="aplicacion_notas" EntityType="Self.aplicacion_notas" />
           <EntitySet Name="candidatos_ofertas" EntityType="Self.candidatos_ofertas" />
           <EntitySet Name="criterios" EntityType="Self.criterios" />
@@ -951,7 +951,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="bolsaTrabajoModelStoreContainer" CdmEntityContainer="bolsaTrabajoEntities">
+        <EntityContainerMapping StorageEntityContainer="bolsaTrabajoModelStoreContainer" CdmEntityContainer="bolsaTrabajoEntities1">
           <EntitySetMapping Name="aplicacion_notas">
             <EntityTypeMapping TypeName="bolsaTrabajoModel.aplicacion_notas">
               <MappingFragment StoreEntitySet="aplicacion_notas">

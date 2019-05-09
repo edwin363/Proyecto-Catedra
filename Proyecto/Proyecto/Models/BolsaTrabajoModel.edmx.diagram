@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="77335e8e4d6a47279cf0584434fddf74" Name="Diagram1">
+      <Diagram DiagramId="d52c6380c6eb470899ac794b3ca93820" Name="Diagram1">
         <EntityTypeShape EntityType="bolsaTrabajoModel.aplicacion_notas" Width="1.5" PointX="18" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="bolsaTrabajoModel.candidatos_ofertas" Width="1.5" PointX="12.75" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="bolsaTrabajoModel.criterios" Width="1.5" PointX="13.5" PointY="6.5" IsExpanded="true" />
