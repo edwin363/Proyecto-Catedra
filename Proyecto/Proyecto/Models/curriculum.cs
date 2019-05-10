@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication3.Models
+namespaceProyecto.Models
 {
     using System;
     using System.Collections.Generic;
