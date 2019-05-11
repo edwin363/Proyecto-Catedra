@@ -11,7 +11,8 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ofertas_criterios
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,6 +23,8 @@ namespace Proyecto.Models
     
         public int id_oferta_crit { get; set; }
         public int id_criterio { get; set; }
+        [Required(ErrorMessage = "Ingrese el porcentaje")]
+        [Display(Name = "Porcentaje")]
         public decimal porcentaje { get; set; }
         public int id_oferta { get; set; }
     

@@ -11,7 +11,8 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class exp_profesional
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,11 +22,23 @@ namespace Proyecto.Models
         }
     
         public int id_exp_profesional { get; set; }
+        [Required(ErrorMessage = "Ingrese el nombre de la empresa")]
+        [Display(Name = "Nombre de la Empresa")]
         public string empresa { get; set; }
+        [Display(Name = "Cargo ejercido")]
+        [Required(ErrorMessage = "Ingrese el cargo")]
         public string cargo { get; set; }
+        [Display(Name = "Jefe inmediato")]
+        [Required(ErrorMessage = "Ingrese el jefe inmediato")]
         public string jefe_inmediato { get; set; }
+        [Display(Name = "Fecha de Inicio")]
+        [Required(ErrorMessage = "Seleccione una fecha de inicio")]
         public System.DateTime fech_inicio { get; set; }
+        [Display(Name = "Fecha de finalizacion")]
+        [Required(ErrorMessage = "Seleccione una fecha de finalizacion")]
         public System.DateTime fech_fin { get; set; }
+        [Display(Name = "Salario")]
+        [Required(ErrorMessage = "Ingrese el salario")]
         public decimal salario { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

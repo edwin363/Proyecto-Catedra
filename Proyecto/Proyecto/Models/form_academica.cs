@@ -11,7 +11,8 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class form_academica
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,10 +22,20 @@ namespace Proyecto.Models
         }
     
         public int id_form_academica { get; set; }
+        [Required(ErrorMessage = "Ingrese el tipo de educacion")]
+        [Display(Name = "Tipo de educación")]
         public string tipo_educacion { get; set; }
+        [Required(ErrorMessage = "Seleccione la fecha de inicio")]
+        [Display(Name = "Inicio")]
         public System.DateTime fech_inicio { get; set; }
+        [Required(ErrorMessage = "Seleccione la fecha de fin")]
+        [Display(Name = "Fin")]
         public System.DateTime fech_fin { get; set; }
+        [Required(ErrorMessage = "Ingrese el titulo obtenido")]
+        [Display(Name = "Titulo obtenido")]
         public string titulo_obtenido { get; set; }
+        [Required(ErrorMessage = "Ingrese el nombre de la institucion")]
+        [Display(Name = "Nombre de la institucion")]
         public string institucion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
