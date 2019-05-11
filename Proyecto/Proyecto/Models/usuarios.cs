@@ -11,7 +11,8 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class usuarios
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,9 +23,17 @@ namespace Proyecto.Models
         }
     
         public int id_usuario { get; set; }
+        [Required(ErrorMessage = "Ingrese el nombre del usuario")]
+        [Display(Name ="Nombre")]
         public string nombre { get; set; }
+        [Display(Name = "Contraseña")]
+        [Required(ErrorMessage = "Ingrese la contraseña")]
         public string password { get; set; }
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "Ingrese el email")]
         public string email { get; set; }
+        [Display(Name = "Tipo de usuario")]
+        [Required(ErrorMessage = "Ingrese el tipo de usuario")]
         public int id_tipo_usuario { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

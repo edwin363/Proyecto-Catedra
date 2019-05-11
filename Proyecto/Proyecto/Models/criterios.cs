@@ -11,7 +11,8 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class criterios
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,8 +20,10 @@ namespace Proyecto.Models
         {
             this.ofertas_criterios = new HashSet<ofertas_criterios>();
         }
-    
+        [Required(ErrorMessage = "Ingrese el id criterio")]
         public int id_criterio { get; set; }
+        [Required(ErrorMessage = "Ingrese el nombre del criterio")]
+        [Display(Name = "Nombre del Criterio")]
         public string nombre_criterio { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -7,7 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 namespace Proyecto.Models { 
+=======
+namespace Proyecto.Models
+{ 
+>>>>>>> Bruno
     using System;
     using System.Collections.Generic;
     
