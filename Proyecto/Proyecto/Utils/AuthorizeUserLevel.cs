@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-﻿    using Proyecto.Models;
-=======
 ﻿using Proyecto.Models;
->>>>>>> dfe55257b573f520ceeb405d9a648213271ac91e
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,16 +20,10 @@ namespace Proyecto.utils
             }
             string usuario = HttpContext.Current.User.Identity.Name;
             usuariosModel model = new usuariosModel();
-<<<<<<< HEAD
 
             string rol = ((usuarios)HttpContext.Current.Session["user"]).tipos_usuarios.tipo_usuario;
             return (rol.Equals(UserRole));
          
-=======
-            
-            string rol = ((usuarios)HttpContext.Current.Session["user"]).tipos_usuarios.tipo_usuario;
-            return (rol.Equals(UserRole));
->>>>>>> dfe55257b573f520ceeb405d9a648213271ac91e
         }
     }
 }

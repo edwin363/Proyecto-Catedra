@@ -7,16 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-<<<<<<< HEAD
 namespace Proyecto.Models { 
-=======
-namespace Proyecto.Models
-<<<<<<< HEAD
-{
-=======
-{ 
->>>>>>> Bruno
->>>>>>> dfe55257b573f520ceeb405d9a648213271ac91e
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -34,11 +25,8 @@ namespace Proyecto.Models
         [Display(Name = "Nombre")]
         [Required(ErrorMessage = "Ingrese el nombre")]
         public string nombre { get; set; }
-<<<<<<< HEAD
         [Display(Name = "Tipo de usuario")]
         [Required(ErrorMessage = "Ingrese el tipo de usuario")]
-=======
->>>>>>> dfe55257b573f520ceeb405d9a648213271ac91e
         public string tipo_usuario { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
