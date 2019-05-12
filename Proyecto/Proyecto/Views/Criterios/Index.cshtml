@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Proyecto.Models.criterios>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Criterios de evaluación</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo criterio", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_criterio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_criterio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_criterio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_criterio)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_criterio }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Ver detalles", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_criterio  }, new { @class = "btn btn-danger", @onclick = "return confirm('Esta seguro que quiere eliminar este criterio')" })
+        </td>
+    </tr>
+}
+
+</table>
