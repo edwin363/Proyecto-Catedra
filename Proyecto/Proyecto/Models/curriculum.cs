@@ -20,7 +20,7 @@ namespace Proyecto.Models
         {
             this.candidatos_ofertas = new HashSet<candidatos_ofertas>();
         }
-        
+
         public int id_curriculum { get; set; }
         [Required(ErrorMessage = "Ingrese el Codigo")]
         [Display(Name = "Codigo")]
@@ -36,7 +36,7 @@ namespace Proyecto.Models
         [Required(ErrorMessage = "Ingrese la pretencion Salarial")]
         [Display(Name = "Pretencion Salarial")]
         public decimal pretencion_salarial { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidatos_ofertas> candidatos_ofertas { get; set; }
         public virtual exp_profesional exp_profesional { get; set; }

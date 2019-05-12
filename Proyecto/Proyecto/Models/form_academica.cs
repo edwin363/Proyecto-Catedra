@@ -20,7 +20,7 @@ namespace Proyecto.Models
         {
             this.curriculum = new HashSet<curriculum>();
         }
-    
+
         public int id_form_academica { get; set; }
         [Required(ErrorMessage = "Ingrese el tipo de educacion")]
         [Display(Name = "Tipo de educación")]
@@ -37,7 +37,7 @@ namespace Proyecto.Models
         [Required(ErrorMessage = "Ingrese el nombre de la institucion")]
         [Display(Name = "Nombre de la institucion")]
         public string institucion { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<curriculum> curriculum { get; set; }
     }

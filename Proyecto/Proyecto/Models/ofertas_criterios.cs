@@ -20,14 +20,14 @@ namespace Proyecto.Models
         {
             this.aplicacion_notas = new HashSet<aplicacion_notas>();
         }
-    
+
         public int id_oferta_crit { get; set; }
         public int id_criterio { get; set; }
         [Required(ErrorMessage = "Ingrese el porcentaje")]
         [Display(Name = "Porcentaje")]
         public decimal porcentaje { get; set; }
         public int id_oferta { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<aplicacion_notas> aplicacion_notas { get; set; }
         public virtual criterios criterios { get; set; }

@@ -20,7 +20,7 @@ namespace Proyecto.Models
         {
             this.curriculum = new HashSet<curriculum>();
         }
-    
+
         public int id_idioma { get; set; }
         [Required(ErrorMessage = "Ingrese el idioma")]
         [Display(Name = "Idioma")]
@@ -28,7 +28,7 @@ namespace Proyecto.Models
         [Required(ErrorMessage = "Ingrese la institucion")]
         [Display(Name = "Institucion")]
         public string institucion { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<curriculum> curriculum { get; set; }
     }

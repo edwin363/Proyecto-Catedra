@@ -20,7 +20,7 @@ namespace Proyecto.Models
         {
             this.curriculum = new HashSet<curriculum>();
         }
-    
+
         public int id_exp_profesional { get; set; }
         [Required(ErrorMessage = "Ingrese el nombre de la empresa")]
         [Display(Name = "Nombre de la Empresa")]
@@ -40,7 +40,7 @@ namespace Proyecto.Models
         [Display(Name = "Salario")]
         [Required(ErrorMessage = "Ingrese el salario")]
         public decimal salario { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<curriculum> curriculum { get; set; }
     }

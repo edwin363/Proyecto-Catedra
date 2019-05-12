@@ -14,7 +14,6 @@ namespace Proyecto.Models
     
     public partial class detalle_permisos
     {
-
         public int id_detalle { get; set; }
         public int id_tipo_usuario { get; set; }
         public int id_permiso { get; set; }

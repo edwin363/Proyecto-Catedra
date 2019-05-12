@@ -22,10 +22,10 @@ namespace Proyecto.Models
         [Required(ErrorMessage = "Ingrese el id candidato ofertas")]
         public int id_candi_ofer { get; set; }
         [Display(Name = "Nota")]
-        [Required(ErrorMessage="Ingrese la nota")]
+        [Required(ErrorMessage = "Ingrese la nota")]
         [Range(0, 10)]
         public decimal notas { get; set; }
-    
+
         public virtual candidatos_ofertas candidatos_ofertas { get; set; }
         public virtual ofertas_criterios ofertas_criterios { get; set; }
     }

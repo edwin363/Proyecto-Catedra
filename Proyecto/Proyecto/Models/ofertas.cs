@@ -21,7 +21,7 @@ namespace Proyecto.Models
             this.candidatos_ofertas = new HashSet<candidatos_ofertas>();
             this.ofertas_criterios = new HashSet<ofertas_criterios>();
         }
-    
+
         public int id_oferta { get; set; }
         [Required(ErrorMessage = "Ingrese el nombre del puesto")]
         [Display(Name = "Nombre del puesto")]
@@ -69,7 +69,7 @@ namespace Proyecto.Models
         [Display(Name = "Idiomas")]
         [Required(ErrorMessage = "Ingrese los idiomas")]
         public string idiomas { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidatos_ofertas> candidatos_ofertas { get; set; }
         public virtual empleados empleados { get; set; }

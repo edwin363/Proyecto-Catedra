@@ -20,21 +20,20 @@ namespace Proyecto.Models
         {
             this.curriculum = new HashSet<curriculum>();
         }
-    
+
         public int id_referencia { get; set; }
         [Required(ErrorMessage = "Ingrese el Nombre")]
-        [Display(Name ="Nombre")]
+        [Display(Name = "Nombre")]
         public string nombre { get; set; }
         [Required(ErrorMessage = "Ingrese el telefono")]
-        [Display(Name ="Telefono")]
+        [Display(Name = "Telefono")]
         public string telefono { get; set; }
         [Required(ErrorMessage = "Ingrese la institucion")]
-        [Display(Name ="Institucion")]
+        [Display(Name = "Institucion")]
         public string institucion { get; set; }
         [Required(ErrorMessage = "Ingrese el email")]
-        [Display(Name ="Email")]
+        [Display(Name = "Email")]
         public string email { get; set; }
-    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<curriculum> curriculum { get; set; }
     }
