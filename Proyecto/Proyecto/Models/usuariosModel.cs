@@ -12,6 +12,11 @@ namespace Proyecto.Models
             string pass = SecurityUtils.EncriptarSHA2(password);
             return ctx.usuarios.Where(u => u.nombre == user && u.password == pass).FirstOrDefault();
         }
+
+        public usuarios recuperarContra(string emailUsuario)
+        {
+            return ctx.usuarios.Where(u => u.email == emailUsuario).FirstOrDefault();
+        }
     }
 }
    

@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "RecuperarContrasena";
+}
+
+<h2>RecuperarContrasena</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-4 ">
+            <h2>Recuperar Contraseña</h2>
+
+            @using (Html.BeginForm("RecuperarContrasena", "Usuarios", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    <label for="email">Ingrese su correo:</label>
+                    <input type="email" name="email" id="email" class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Iniciar sesion</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

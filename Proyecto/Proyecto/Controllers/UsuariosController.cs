@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -62,6 +64,79 @@ namespace Proyecto.Controllers
         {
             FormsAuthentication.SignOut();
             return Redirect("login");
+        }
+
+
+        public ActionResult RecuperarContrasena()
+        {
+            return View();
+        }
+
+        
+        [HttpPost]
+        public ActionResult RecuperarContrasena(string email)
+        {
+            if (String.IsNullOrWhiteSpace(email))
+            {
+                ModelState.AddModelError("email", "Debes ingresar el email");
+            }
+            if (!ModelState.IsValid)
+            {
+                return View(ModelState);
+            }
+            usuarios user = model.recuperarContra(email);
+            if (user == null)
+            {
+                ModelState.AddModelError("email", "El email que ha ingresado no existe en nuestra base de datos");
+                return View(ModelState);
+            }
+            else
+            {
+                return RedirectToAction("login");
+            }
+                //recuperarContra(email);
+
+                //return RedirectToAction("login");
+        }
+
+        public void recuperarContra(string emailDestino)
+        {
+            string asunto = "Recuperar Contraseña";
+
+            MailMessage msg = new MailMessage();
+            msg.To.Add(emailDestino);
+
+            msg.From = new MailAddress("bolsatrabajo76@gmail.com", "Bolsa de Trabajo SV", System.Text.Encoding.UTF8);
+            msg.Subject = asunto;
+            msg.SubjectEncoding = System.Text.Encoding.UTF8;
+            msg.Body = string.Format("<h2>Bolsa de Trabajo</h2>" +
+                "<p>Si quieres recuperar la contraseña de click en el boton recuperar.</p>" +
+                "<br>" +
+                "<form action='aloha' method='POST'>" +
+                "<input type='hidden' value='{0}' id='correo' name='correo' />" +
+                "<button type='submit'>Recuperar</button>" +
+                "" +
+                "</form>" +
+                "<br>" +
+                "<p>Si no has solicitado esta recuperacion, ignorar este mensaje.</p>", emailDestino);
+            msg.BodyEncoding = System.Text.Encoding.UTF8;
+            msg.IsBodyHtml = true;
+            msg.Priority = MailPriority.High;
+
+            SmtpClient cliente = new SmtpClient();
+            cliente.Credentials = new NetworkCredential("bolsatrabajo76@gmail.com", "bolsa1234");
+            cliente.Port = 25;
+            cliente.Host = "smtp.gmail.com";
+            cliente.EnableSsl = true;
+            try
+            {
+                cliente.Send(msg);
+            }
+            catch (SmtpException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.ReadLine();
+            }
         }
     }
 }
