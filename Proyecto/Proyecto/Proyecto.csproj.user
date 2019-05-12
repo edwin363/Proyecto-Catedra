@@ -17,10 +17,7 @@
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
-<<<<<<< HEAD
     <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
-=======
->>>>>>> dfe55257b573f520ceeb405d9a648213271ac91e
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
