@@ -11,7 +11,8 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class permisos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +20,12 @@ namespace Proyecto.Models
         {
             this.detalle_permisos = new HashSet<detalle_permisos>();
         }
-    
+
         public int id_permiso { get; set; }
+        [Required(ErrorMessage = "Ingrese el nombre del permiso")]
+        [Display(Name = "Permiso")]
         public string nombre_permiso { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<detalle_permisos> detalle_permisos { get; set; }
     }

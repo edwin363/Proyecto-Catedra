@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="bolsaTrabajoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="bolsaTrabajoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="aplicacion_notas">
           <Key>
             <PropertyRef Name="id_app_notas" />
@@ -165,6 +165,10 @@
           <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="id_tipo_usuario" Type="int" Nullable="false" />
+          <Property Name="apellido1" Type="varchar" MaxLength="10" />
+          <Property Name="apellido2" Type="varchar" MaxLength="10" />
+          <Property Name="estado" Type="int" />
+          <Property Name="codigo" Type="varchar" MaxLength="10" />
         </EntityType>
         <Association Name="FK__aplicacio__id_ca__3C69FB99">
           <End Role="candidatos_ofertas" Type="Self.candidatos_ofertas" Multiplicity="1" />
@@ -456,8 +460,7 @@
             <End Role="usuarios" EntitySet="usuarios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bolsaTrabajoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -655,6 +658,10 @@
           <NavigationProperty Name="curriculum" Relationship="Self.FK__curriculu__id_us__2C3393D0" FromRole="usuarios" ToRole="curriculum" />
           <NavigationProperty Name="empleados" Relationship="Self.FK__empleados__id_us__22AA2996" FromRole="usuarios" ToRole="empleados" />
           <NavigationProperty Name="tipos_usuarios" Relationship="Self.FK__usuarios__id_tip__182C9B23" FromRole="usuarios" ToRole="tipos_usuarios" />
+          <Property Name="apellido1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="apellido2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" />
+          <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__aplicacio__id_ca__3C69FB99">
           <End Role="candidatos_ofertas" Type="Self.candidatos_ofertas" Multiplicity="1" />
@@ -1121,6 +1128,10 @@
           <EntitySetMapping Name="usuarios">
             <EntityTypeMapping TypeName="bolsaTrabajoModel.usuarios">
               <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+                <ScalarProperty Name="apellido1" ColumnName="apellido1" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="password" ColumnName="password" />

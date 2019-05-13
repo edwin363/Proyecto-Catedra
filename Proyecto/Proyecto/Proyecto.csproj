@@ -136,8 +136,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CriteriosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+
     <Compile Include="Controllers\OfertasController.cs" />
     <Compile Include="Controllers\OfertasCriteriosController.cs" />
+
+    <Compile Include="Controllers\UsuariosController.cs" />
+
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,6 +149,7 @@
     <Compile Include="Models\aplicacion_notas.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\aplicacion_notasModel.cs" />
     <Compile Include="Models\BolsaTrabajoModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,32 +168,46 @@
     <Compile Include="Models\candidatos_ofertas.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\candidatos_ofertasModel.cs" />
     <Compile Include="Models\criterios.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CriteriosModel.cs" />
+
+    <!--<Compile Include="Models\CriteriosModel.cs" />-->
+
+    <Compile Include="Models\criteriosModel.cs" />
+
     <Compile Include="Models\curriculum.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\curriculumModel.cs" />
     <Compile Include="Models\detalle_permisos.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\detalle_permisosModel.cs" />
     <Compile Include="Models\empleados.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmpleadosModel.cs" />
+
+    <!--<Compile Include="Models\EmpleadosModel.cs" />-->
+
+    <Compile Include="Models\empleadosModel.cs" />
+
     <Compile Include="Models\exp_profesional.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\exp_profesionalModel.cs" />
     <Compile Include="Models\form_academica.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\form_academicaModel.cs" />
     <Compile Include="Models\idiomas.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\instituciones.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\institucionesModel.cs" />
     <Compile Include="Models\ofertas.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
@@ -197,19 +216,25 @@
     <Compile Include="Models\ofertas_criterios.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ofertas_criteriosModel.cs" />
     <Compile Include="Models\permisos.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\refer_personales.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\refer_personalesModel.cs" />
     <Compile Include="Models\tipos_usuarios.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tipos_usuariosModel.cs" />
     <Compile Include="Models\usuarios.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\usuariosModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\AuthorizeUserLevel.cs" />
+    <Compile Include="Utils\SecurityUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -250,7 +275,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -264,9 +291,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+
     <Content Include="Views\Criterios\Index.cshtml" />
     <Content Include="Views\Criterios\Edit.cshtml" />
     <Content Include="Views\Ofertas\Index.cshtml" />
+
+    <Content Include="Views\Usuarios\login.cshtml" />
+    <Content Include="Views\IngresarCandidato\Create.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
