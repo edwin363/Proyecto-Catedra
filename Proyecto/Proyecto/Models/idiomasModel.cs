@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Proyecto.Models
+namespace WebApplication3.Models
 {
-    public class OfertasCriteriosModel: AbstractModel<ofertas_criterios>
+    public class idiomasModel: AbstractModel<idiomas>
     {
     }
 }

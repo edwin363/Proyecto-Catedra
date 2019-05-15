@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Proyecto.Models;
 
-namespace Proyecto.Models
+namespace WebApplication3.Models
 {
-    public class ofertasModel : AbstractModel<ofertas>
+    public class permisosModel: AbstractModel<permisos>
     {
     }
 }
