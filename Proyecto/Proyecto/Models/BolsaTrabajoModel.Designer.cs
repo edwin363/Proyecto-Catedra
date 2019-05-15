@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\DELL\source\repos\edwin363\Proyecto-Catedra\Proyecto\Proyecto\Models\BolsaTrabajoModel.edmx'. 
 =======
 ﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\Luis\source\repos\edwin363\Proyecto-Catedra\Proyecto\Proyecto\Models\BolsaTrabajoModel.edmx'. 
 >>>>>>> Luis
+=======
+﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\Pablo.Pablo-PC\Source\Repos\Proyecto-Catedra3\Proyecto\Proyecto\Models\BolsaTrabajoModel.edmx'. 
+>>>>>>> Bruno
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

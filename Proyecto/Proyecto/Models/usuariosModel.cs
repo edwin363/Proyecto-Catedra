@@ -13,7 +13,10 @@ namespace Proyecto.Models
             return ctx.usuarios.Where(u => u.nombre == user && u.password == pass).FirstOrDefault();
         }
 
+<<<<<<< HEAD
        
+=======
+>>>>>>> Bruno
     }
 }
    

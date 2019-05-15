@@ -138,6 +138,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngresarCandidatoController.cs" />
+<<<<<<< HEAD
 
     <Compile Include="Controllers\CriteriosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -146,6 +147,8 @@
     <Compile Include="Controllers\OfertasController.cs" />
     <Compile Include="Controllers\OfertasCriteriosController.cs" />
 
+=======
+>>>>>>> Bruno
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -294,6 +297,7 @@
     <Content Include="Views\Ofertas\Index.cshtml" />
     <Content Include="Views\Usuarios\login.cshtml" />
     <Content Include="Views\IngresarCandidato\Create.cshtml" />
+<<<<<<< HEAD
 
     <Content Include="Views\Default\Index.cshtml" />
 
@@ -305,6 +309,10 @@
     <Content Include="Views\Ofertas\Edit.cshtml" />
     <Content Include="Views\Ofertas\Details.cshtml" />
 
+=======
+    <Content Include="Views\Usuarios\verempleados.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+>>>>>>> Bruno
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
