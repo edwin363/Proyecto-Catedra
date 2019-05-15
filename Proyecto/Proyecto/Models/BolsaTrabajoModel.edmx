@@ -162,13 +162,13 @@
           </Key>
           <Property Name="id_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="apellido1" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="apellido2" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="id_tipo_usuario" Type="int" Nullable="false" />
-          <Property Name="apellido1" Type="varchar" MaxLength="10" />
-          <Property Name="apellido2" Type="varchar" MaxLength="10" />
-          <Property Name="estado" Type="int" />
-          <Property Name="codigo" Type="varchar" MaxLength="10" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <Association Name="FK__aplicacio__id_ca__3C69FB99">
           <End Role="candidatos_ofertas" Type="Self.candidatos_ofertas" Multiplicity="1" />
@@ -658,10 +658,10 @@
           <NavigationProperty Name="curriculum" Relationship="Self.FK__curriculu__id_us__2C3393D0" FromRole="usuarios" ToRole="curriculum" />
           <NavigationProperty Name="empleados" Relationship="Self.FK__empleados__id_us__22AA2996" FromRole="usuarios" ToRole="empleados" />
           <NavigationProperty Name="tipos_usuarios" Relationship="Self.FK__usuarios__id_tip__182C9B23" FromRole="usuarios" ToRole="tipos_usuarios" />
-          <Property Name="apellido1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="apellido2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="estado" Type="Int32" />
-          <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="apellido1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellido2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <Association Name="FK__aplicacio__id_ca__3C69FB99">
           <End Role="candidatos_ofertas" Type="Self.candidatos_ofertas" Multiplicity="1" />
