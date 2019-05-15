@@ -28,12 +28,10 @@ namespace Proyecto.Models
         public virtual DbSet<aplicacion_notas> aplicacion_notas { get; set; }
         public virtual DbSet<candidatos_ofertas> candidatos_ofertas { get; set; }
         public virtual DbSet<criterios> criterios { get; set; }
-        public virtual DbSet<curriculum> curriculum { get; set; }
         public virtual DbSet<detalle_permisos> detalle_permisos { get; set; }
         public virtual DbSet<empleados> empleados { get; set; }
         public virtual DbSet<exp_profesional> exp_profesional { get; set; }
         public virtual DbSet<form_academica> form_academica { get; set; }
-        public virtual DbSet<idiomas> idiomas { get; set; }
         public virtual DbSet<instituciones> instituciones { get; set; }
         public virtual DbSet<ofertas> ofertas { get; set; }
         public virtual DbSet<ofertas_criterios> ofertas_criterios { get; set; }
@@ -41,5 +39,7 @@ namespace Proyecto.Models
         public virtual DbSet<refer_personales> refer_personales { get; set; }
         public virtual DbSet<tipos_usuarios> tipos_usuarios { get; set; }
         public virtual DbSet<usuarios> usuarios { get; set; }
+        public virtual DbSet<curriculum> curriculum { get; set; }
+        public virtual DbSet<idiomas> idiomas { get; set; }
     }
 }

@@ -134,7 +134,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngresarCandidatoController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -197,6 +199,7 @@
     <Compile Include="Models\ofertas.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ofertasModel.cs" />
     <Compile Include="Models\ofertas_criterios.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
@@ -277,6 +280,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Usuarios\login.cshtml" />
     <Content Include="Views\IngresarCandidato\Create.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

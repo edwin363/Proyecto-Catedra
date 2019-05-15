@@ -8,5 +8,9 @@ namespace Proyecto
 {
     public class empleadosModel : AbstractModel<empleados>
     {
+        public empleados getEmpleado(int id)
+        {
+            return ctx.empleados.Where(u => u.id_usuario == id).FirstOrDefault();
+        }
     }
 }
