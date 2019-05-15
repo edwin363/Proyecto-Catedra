@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Proyecto.Models
 {
-    public class EmpleadosModel
+    public class EmpleadosModel : AbstractModel<empleados>
     {
     }
 }

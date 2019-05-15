@@ -10,7 +10,7 @@ namespace Proyecto.Controllers
 {
     public class OfertasController : Controller
     {
-        empleadosModel empleadomodel = new empleadosModel();
+        EmpleadosModel empleadomodel = new EmpleadosModel();
         ofertasModel model = new ofertasModel();
 
         // GET: Ofertas
