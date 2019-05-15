@@ -13,6 +13,10 @@ namespace Proyecto.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dbe508e5e71d7acbe817cc4d5e256d79210734cd
     public partial class criterios
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

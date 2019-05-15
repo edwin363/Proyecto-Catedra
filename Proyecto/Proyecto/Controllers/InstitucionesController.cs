@@ -8,37 +8,46 @@ using System.Web.Mvc;
 
 namespace Proyecto.Controllers
 {
-    public class CriteriosController : Controller
+    public class InstitucionesController : Controller
     {
-        criteriosModel model = new criteriosModel();
-
-        // GET: Criterios
+        institucionesModel model = new institucionesModel();
+        
+        // GET: Instituciones
         public ActionResult Index()
         {
             return View(model.List());
         }
 
-        // GET: Criterios/Details/5
+        // GET: Instituciones/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Criterios/Create
+        // GET: Instituciones/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Criterios/Create
+        // POST: Instituciones/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(instituciones instituciones)
         {
             try
             {
                 // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    if (model.Insert(instituciones) > 0)
+                    {
+                        TempData["successMessage"] = "Institución insertada con exito";
+                        return RedirectToAction("Index");
+                    }
+                    TempData["errorMessage"] = "Upss, no se pudo insertar";
+                }
 
-                return RedirectToAction("Index");
+                return View(instituciones);
             }
             catch
             {
@@ -46,38 +55,38 @@ namespace Proyecto.Controllers
             }
         }
 
-        // GET: Criterios/Edit/5
+        // GET: Instituciones/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            criterios criterio = model.GetById(id);
-            if (criterio == null)
+            instituciones institucion = model.GetById(id);
+            if (institucion == null)
             {
                 return HttpNotFound();
             }
-            return View(criterio);
+            return View(institucion);
         }
 
-        // POST: Criterios/Edit/5
+        // POST: Instituciones/Edit/5
         [HttpPost]
-        public ActionResult Edit(criterios criterio)
+        public ActionResult Edit(instituciones institucion)
         {
             try
             {
                 // TODO: Add update logic here
                 if (ModelState.IsValid)
                 {
-                    if (model.Update(criterio, criterio.id_criterio) > 0)
+                    if (model.Update(institucion, institucion.id_institucion) > 0)
                     {
-                        TempData["successMessage"] = "Criterio modificado con exito";
+                        TempData["successMessage"] = "Institución modificada con exito";
                         return RedirectToAction("Index");
                     }
                     TempData["errorMessage"] = "Upss, no se pudo modificar";
-                }             
-                return View(criterio);
+                }
+                return View(institucion);
             }
             catch
             {
@@ -85,31 +94,31 @@ namespace Proyecto.Controllers
             }
         }
 
-        // GET: Criterios/Delete/5
+        // GET: Instituciones/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            criterios criterio = model.GetById(id);
-            if (criterio == null)
+            instituciones institucion = model.GetById(id);
+            if (institucion == null)
             {
-                TempData["errorMessage"] = "No existe este criterio";
+                TempData["errorMessage"] = "No existe esta institución";
                 return RedirectToAction("Index");
             }
             if (model.Remove(id) > 0)
             {
-                TempData["successMessage"] = "Criterio eliminado correctamente";
+                TempData["successMessage"] = "Institución eliminada correctamente";
             }
             else
             {
-                TempData["errorMessage"] = "No se puede eliminar este criterio";
+                TempData["errorMessage"] = "No se puede eliminar esta institución";
             }
             return RedirectToAction("Index");
         }
 
-        // POST: Criterios/Delete/5
+        // POST: Instituciones/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

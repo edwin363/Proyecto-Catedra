@@ -44,6 +44,7 @@ namespace Proyecto.Models
         [Display(Name = "Estado")]
         [Required(ErrorMessage = "Seleccione el estado")]
         public Nullable<int> estado { get; set; }
+
         public string codigo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

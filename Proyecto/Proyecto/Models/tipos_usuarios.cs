@@ -25,9 +25,6 @@ namespace Proyecto.Models {
         [Display(Name = "Nombre")]
         [Required(ErrorMessage = "Ingrese el nombre")]
         public string nombre { get; set; }
-        [Display(Name = "Tipo de usuario")]
-        [Required(ErrorMessage = "Ingrese el tipo de usuario")]
-        public string tipo_usuario { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<detalle_permisos> detalle_permisos { get; set; }
