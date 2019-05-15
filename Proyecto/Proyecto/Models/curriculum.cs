@@ -11,8 +11,7 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class curriculum
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,23 +19,17 @@ namespace Proyecto.Models
         {
             this.candidatos_ofertas = new HashSet<candidatos_ofertas>();
         }
-
+    
         public int id_curriculum { get; set; }
-        [Required(ErrorMessage = "Ingrese el Codigo")]
-        [Display(Name = "Codigo")]
         public string codigo { get; set; }
-        [Required(ErrorMessage = "Suba una Fotografia")]
-        [Display(Name = "Fotografia")]
         public string fotografia { get; set; }
         public int id_form_academica { get; set; }
         public int id_exp_laboral { get; set; }
         public int id_idiomas { get; set; }
         public int id_ref_profesionales { get; set; }
         public int id_usuario { get; set; }
-        [Required(ErrorMessage = "Ingrese la pretencion Salarial")]
-        [Display(Name = "Pretencion Salarial")]
         public decimal pretencion_salarial { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidatos_ofertas> candidatos_ofertas { get; set; }
         public virtual exp_profesional exp_profesional { get; set; }

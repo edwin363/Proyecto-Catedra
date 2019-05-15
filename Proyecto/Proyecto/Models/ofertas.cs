@@ -11,8 +11,7 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class ofertas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,54 +20,25 @@ namespace Proyecto.Models
             this.candidatos_ofertas = new HashSet<candidatos_ofertas>();
             this.ofertas_criterios = new HashSet<ofertas_criterios>();
         }
+    
         public int id_oferta { get; set; }
-        [Required(ErrorMessage = "Ingrese el nombre del puesto")]
-        [Display(Name = "Nombre del puesto")]
         public string nombre_puesto { get; set; }
-        [Required(ErrorMessage = "Seleccione el tipo de contrato")]
-        [Display(Name = "Tipo de contrato")]
         public string tipo_contrato { get; set; }
-        [Required(ErrorMessage = "Ingrese el numero de plazas")]
-        [Display(Name = "Numero de plazas")]
         public int numero_plazas { get; set; }
-        [Required(ErrorMessage = "Ingrese el id del empleado")]
-        [Display(Name = "Empleado")]
         public int id_empleado { get; set; }
-        [Display(Name = "Salario")]
-        [Required(ErrorMessage = "Ingrese el salario")]
         public decimal salario_oferta { get; set; }
-        [Display(Name = "Inicio")]
-        [Required(ErrorMessage = "Seleccione la fecha de inicio")]
         public System.DateTime fecha_publicacion { get; set; }
-        [Display(Name = "Fin")]
-        [Required(ErrorMessage = "Seleccione la fecha de finalización")]
         public System.DateTime fecha_finalizacion { get; set; }
-        [Display(Name = "Otros detalles")]
         public string otros_detalles { get; set; }
-        [Display(Name = "Mision del puesto")]
-        [Required(ErrorMessage = "Ingrese la mision del pueto")]
         public string mision_puesto { get; set; }
-        [Display(Name = "Funciones basicas")]
-        [Required(ErrorMessage = "Ingrese las funciones basicas")]
         public string funciones_basicas { get; set; }
-        [Display(Name = "Otros aspectos")]
         public string otros_aspectos { get; set; }
-        [Display(Name = "Grado academico")]
-        [Required(ErrorMessage = "Ingrese el grado academico")]
         public string grado_academico { get; set; }
-        [Display(Name = "Especialidad")]
-        [Required(ErrorMessage = "Ingrese la especialidad")]
         public string especialidad { get; set; }
-        [Display(Name = "Nivel de Experiencia")]
-        [Required(ErrorMessage = "Ingrese el nivel de experiencia")]
         public string nivel_experiencia { get; set; }
-        [Display(Name = "Genero")]
-        [Required(ErrorMessage = "Seleccione el genero")]
         public string genero { get; set; }
-        [Display(Name = "Idiomas")]
-        [Required(ErrorMessage = "Ingrese los idiomas")]
         public string idiomas { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidatos_ofertas> candidatos_ofertas { get; set; }
         public virtual empleados empleados { get; set; }
