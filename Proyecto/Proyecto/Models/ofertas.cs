@@ -21,7 +21,6 @@ namespace Proyecto.Models
             this.candidatos_ofertas = new HashSet<candidatos_ofertas>();
             this.ofertas_criterios = new HashSet<ofertas_criterios>();
         }
-
         public int id_oferta { get; set; }
         [Required(ErrorMessage = "Ingrese el nombre del puesto")]
         [Display(Name = "Nombre del puesto")]
