@@ -11,8 +11,7 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class candidatos_ofertas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,20 +19,15 @@ namespace Proyecto.Models
         {
             this.aplicacion_notas = new HashSet<aplicacion_notas>();
         }
-
-        [Required(ErrorMessage = "Ingrese el id candidato ofertas")]
+    
         public int id_cand_ofer { get; set; }
-        [Required(ErrorMessage = "Ingrese la descripcion")]
-        [Display(Name = "Descripción")]
         public string descripcion { get; set; }
-        [Required(ErrorMessage = "Ingrese el id ofertas")]
         public int id_oferta { get; set; }
-        [Required(ErrorMessage = "Ingrese el id curriculum")]
         public int id_curriculum { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<aplicacion_notas> aplicacion_notas { get; set; }
-        public virtual curriculum curriculum { get; set; }
         public virtual ofertas ofertas { get; set; }
+        public virtual curriculum curriculum { get; set; }
     }
 }

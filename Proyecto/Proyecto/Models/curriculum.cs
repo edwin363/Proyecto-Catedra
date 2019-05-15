@@ -11,38 +11,37 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class curriculum
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public curriculum()
         {
             this.candidatos_ofertas = new HashSet<candidatos_ofertas>();
+            this.exp_profesional = new HashSet<exp_profesional>();
+            this.form_academica = new HashSet<form_academica>();
+            this.refer_personales = new HashSet<refer_personales>();
+            this.idiomas = new HashSet<idiomas>();
         }
-
+    
         public int id_curriculum { get; set; }
-        [Required(ErrorMessage = "Ingrese el Codigo")]
-        [Display(Name = "Codigo")]
-        public string codigo { get; set; }
-        [Required(ErrorMessage = "Suba una Fotografia")]
-        [Display(Name = "Fotografia")]
-        public string fotografia { get; set; }
-        public int id_form_academica { get; set; }
-        public int id_exp_laboral { get; set; }
-        public int id_idiomas { get; set; }
-        public int id_ref_profesionales { get; set; }
         public int id_usuario { get; set; }
-        [Required(ErrorMessage = "Ingrese la pretencion Salarial")]
-        [Display(Name = "Pretencion Salarial")]
-        public decimal pretencion_salarial { get; set; }
-
+        public string fotografia { get; set; }
+        public System.DateTime fechaNacimiento { get; set; }
+        public string direccion { get; set; }
+        public string numeroTelefono { get; set; }
+        public string dui { get; set; }
+        public string sexo { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidatos_ofertas> candidatos_ofertas { get; set; }
-        public virtual exp_profesional exp_profesional { get; set; }
-        public virtual form_academica form_academica { get; set; }
-        public virtual idiomas idiomas { get; set; }
-        public virtual refer_personales refer_personales { get; set; }
-        public virtual usuarios usuarios { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<exp_profesional> exp_profesional { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<form_academica> form_academica { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<refer_personales> refer_personales { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<idiomas> idiomas { get; set; }
     }
 }
