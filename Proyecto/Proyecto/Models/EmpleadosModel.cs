@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Proyecto.Models
 {
-    public class CriteriosModel: AbstractModel<criterios>
+    public class EmpleadosModel
     {
     }
 }

@@ -1,0 +1,154 @@
+﻿@model Proyecto.Models.ofertas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ofertas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_oferta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_oferta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_puesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_puesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_contrato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_contrato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numero_plazas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero_plazas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salario_oferta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salario_oferta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_publicacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_publicacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_finalizacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_finalizacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.otros_detalles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.otros_detalles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mision_puesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mision_puesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.funciones_basicas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.funciones_basicas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.otros_aspectos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.otros_aspectos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.grado_academico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.grado_academico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.especialidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.especialidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nivel_experiencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nivel_experiencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.genero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.genero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idiomas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idiomas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_oferta }) |
+    @Html.ActionLink("volver a la lista", "Index")
+</p>

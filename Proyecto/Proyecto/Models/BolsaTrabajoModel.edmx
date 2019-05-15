@@ -738,10 +738,18 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
           <Property Name="id_tipo_usuario" Type="Int32" Nullable="false" />
           <NavigationProperty Name="empleados" Relationship="Self.FK__empleados__id_us__22AA2996" FromRole="usuarios" ToRole="empleados" />
           <NavigationProperty Name="tipos_usuarios" Relationship="Self.FK__usuarios__id_tip__182C9B23" FromRole="usuarios" ToRole="tipos_usuarios" />
+<<<<<<< HEAD
+=======
+
+>>>>>>> Luis
           <Property Name="apellido1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellido2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="estado" Type="Int32" Nullable="false" />
           <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+<<<<<<< HEAD
+=======
+
+>>>>>>> Luis
         </EntityType>
         <Association Name="FK__aplicacio__id_ca__3C69FB99">
           <End Role="candidatos_ofertas" Type="Self.candidatos_ofertas" Multiplicity="1" />

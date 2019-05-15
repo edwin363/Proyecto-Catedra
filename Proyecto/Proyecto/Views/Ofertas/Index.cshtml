@@ -1,0 +1,129 @@
+﻿@model IEnumerable<Proyecto.Models.ofertas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ofertas</h2>
+
+<p>
+    @Html.ActionLink("Crear nueva oferta", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.id_oferta)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_puesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_contrato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero_plazas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_empleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salario_oferta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_publicacion)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.fecha_finalizacion)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.otros_detalles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mision_puesto)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.funciones_basicas)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.otros_aspectos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.grado_academico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.especialidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nivel_experiencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.genero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idiomas)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.id_oferta)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_puesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_contrato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero_plazas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_empleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salario_oferta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_publicacion)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.fecha_finalizacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.otros_detalles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mision_puesto)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.funciones_basicas)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.otros_aspectos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.grado_academico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.especialidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nivel_experiencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idiomas)
+        </td>*@
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_oferta }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_oferta }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_oferta }, new { @class = "btn btn-danger", @onclick = "return confirm('Esta seguro que quiere eliminar esta oferta')" })
+        </td>
+    </tr>
+}
+
+</table>

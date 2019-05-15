@@ -25,6 +25,7 @@ namespace Proyecto.Models
         }
     
         public int id_curriculum { get; set; }
+
         public int id_usuario { get; set; }
         public string fotografia { get; set; }
         public System.DateTime fechaNacimiento { get; set; }
