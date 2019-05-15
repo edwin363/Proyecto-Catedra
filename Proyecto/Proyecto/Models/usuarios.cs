@@ -17,7 +17,6 @@ namespace Proyecto.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public usuarios()
         {
-            this.curriculum = new HashSet<curriculum>();
             this.empleados = new HashSet<empleados>();
         }
     
@@ -31,8 +30,6 @@ namespace Proyecto.Models
         public int estado { get; set; }
         public string codigo { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<curriculum> curriculum { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<empleados> empleados { get; set; }
         public virtual tipos_usuarios tipos_usuarios { get; set; }

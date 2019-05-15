@@ -134,12 +134,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngresarCandidatoController.cs" />
+
     <Compile Include="Controllers\CriteriosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngresarCandidatoController.cs" />
     <Compile Include="Controllers\InstitucionesController.cs" />
     <Compile Include="Controllers\OfertasController.cs" />
     <Compile Include="Controllers\OfertasCriteriosController.cs" />
+
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -288,6 +294,9 @@
     <Content Include="Views\Ofertas\Index.cshtml" />
     <Content Include="Views\Usuarios\login.cshtml" />
     <Content Include="Views\IngresarCandidato\Create.cshtml" />
+
+    <Content Include="Views\Default\Index.cshtml" />
+
 
     <Content Include="Views\Instituciones\Index.cshtml" />
     <Content Include="Views\Instituciones\Create.cshtml" />
