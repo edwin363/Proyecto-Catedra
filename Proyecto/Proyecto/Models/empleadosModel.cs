@@ -1,12 +1,11 @@
-﻿using Proyecto.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Proyecto
+namespace Proyecto.Models
 {
-    public class empleadosModel : AbstractModel<empleados>
+    public class EmpleadosModel
     {
     }
 }
