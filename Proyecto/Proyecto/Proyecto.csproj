@@ -149,7 +149,9 @@
     <Compile Include="Controllers\OfertasCriteriosController.cs" />
     <Compile Include="Controllers\CurriculumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+
     <Compile Include="Controllers\PublicController.cs" />
+
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -187,6 +189,7 @@
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\curriculumModel.cs" />
+    <Compile Include="Models\cv_ExpModel.cs" />
     <Compile Include="Models\cv_exp_laboral.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
@@ -198,6 +201,7 @@
     <Compile Include="Models\cv_idiomas.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\cv_referenciaModel.cs" />
     <Compile Include="Models\cv_ref_profesionales.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
@@ -338,7 +342,13 @@
     <Content Include="Views\OfertasCriterios\Index.cshtml" />
     <Content Include="Views\OfertasCriterios\Create.cshtml" />
     <Content Include="Views\OfertasCriterios\Edit.cshtml" />
+
     <Content Include="Views\Public\Index.cshtml" />
+
+    <Content Include="Views\Curriculum\ExperienciaLaboral.cshtml" />
+    <Content Include="Views\Curriculum\Referencia.cshtml" />
+    <Content Include="Views\Curriculum\MostrarCV.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
