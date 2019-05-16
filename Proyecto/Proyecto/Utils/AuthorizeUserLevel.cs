@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-﻿using Proyecto.Models;
-=======
-
-﻿    using Proyecto.Models;
-
->>>>>>> Bruno
+using Proyecto.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,18 +20,10 @@ namespace Proyecto.utils
             }
             string usuario = HttpContext.Current.User.Identity.Name;
             usuariosModel model = new usuariosModel();
-<<<<<<< HEAD
-=======
-
->>>>>>> Bruno
-
             string rol = ((usuarios)HttpContext.Current.Session["user"]).tipos_usuarios.nombre;
             return (rol.Equals(UserRole));
          
-<<<<<<< HEAD
-=======
 
->>>>>>> Bruno
         }
     }
 }

@@ -8,5 +8,9 @@ namespace Proyecto
 {
     public class curriculumModel : AbstractModel<curriculum>
     {
+        public curriculum idCurriculum(int id)
+        {
+            return ctx.curriculum.Where(u => u.id_usuario == id).FirstOrDefault();
+        }
     }
 }

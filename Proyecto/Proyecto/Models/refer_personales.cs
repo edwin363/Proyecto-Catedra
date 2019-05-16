@@ -17,7 +17,7 @@ namespace Proyecto.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public refer_personales()
         {
-            this.curriculum = new HashSet<curriculum>();
+            this.cv_ref_profesionales = new HashSet<cv_ref_profesionales>();
         }
     
         public int id_referencia { get; set; }
@@ -27,6 +27,6 @@ namespace Proyecto.Models
         public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<curriculum> curriculum { get; set; }
+        public virtual ICollection<cv_ref_profesionales> cv_ref_profesionales { get; set; }
     }
 }

@@ -13,10 +13,15 @@ namespace Proyecto.Models
             return ctx.usuarios.Where(u => u.nombre == user && u.password == pass).FirstOrDefault();
         }
 
-<<<<<<< HEAD
-       
-=======
->>>>>>> Bruno
+        public usuarios recuperarContra(string emailUsuario)
+        {
+            return ctx.usuarios.Where(u => u.email == emailUsuario).FirstOrDefault();
+        }
+
+        public usuarios validarCodigo(string codigo)
+        {
+            return ctx.usuarios.Where(u => u.codigo == codigo).FirstOrDefault();
+        }
     }
 }
    

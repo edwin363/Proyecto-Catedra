@@ -17,7 +17,7 @@ namespace Proyecto.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public form_academica()
         {
-            this.curriculum = new HashSet<curriculum>();
+            this.cv_form_academica = new HashSet<cv_form_academica>();
         }
     
         public int id_form_academica { get; set; }
@@ -28,6 +28,6 @@ namespace Proyecto.Models
         public string institucion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<curriculum> curriculum { get; set; }
+        public virtual ICollection<cv_form_academica> cv_form_academica { get; set; }
     }
 }

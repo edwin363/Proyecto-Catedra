@@ -1,0 +1,156 @@
+﻿@model Proyecto.Models.form_academica
+
+@{
+    ViewBag.Title = "FormacionAcademica";
+}
+ 
+<h2>Crear Curriculum</h2>
+<h3>Tercer Paso: Formacion Academica @ViewBag.tipo</h3>
+
+@using (Html.BeginForm("FormacionAcademica", "Curriculum", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <h4 style="color: red;">@ViewBag.errorB</h4>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.titulo_obtenido, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.titulo_obtenido, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.titulo_obtenido, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.institucion, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.institucion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.institucion, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.tipo_educacion, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <select class="form-control" id="tipo" name="tipo">
+                <option value="Educación Basica" selected>Educación Basica</option>
+                <option value="Educación Media">Educación Media</option>
+                <option value="Ingenieria">Ingenieria</option>
+                <option value="Licenciatura">Licenciatura</option>
+                <option value="Maestria">Maestria</option>
+                <option value="Tecnico">Tecnico</option>
+                <option value="Diplomado">Diplomado</option>
+                <option value="Doctorado">Doctorado</option>
+            </select>
+            @Html.ValidationMessageFor(model => model.tipo_educacion, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.fech_inicio, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input id="inicio" name="inicio" type="date" required>
+            @Html.ValidationMessageFor(model => model.fech_inicio, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.fech_fin, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input id="fin" name="fin" type="date" required>
+            @Html.ValidationMessageFor(model => model.fech_fin, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Agregar" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+<br />
+<div class="container" style="width:100%;margin:auto;">
+    <a href="" class="btn btn-success">Siguiente</a>
+</div>
+<br />
+<h3>Lista de Formación Academica</h3>
+<table class="table table-hover" style="width:100%;border: none;margin:auto;">
+    <tr>
+        <th style="text-align:center;">
+            Titulo Obtenido
+        </th>
+        <th style="text-align:center;">
+            Institucion
+        </th>
+        <th style="text-align:center;">
+            Tipo de Educación
+        </th>
+        <th style="text-align:center;">
+            Fecha de Inicio
+        </th>
+        <th style="text-align:center;">
+            Fecha de Fin
+        </th>
+    </tr>
+
+    @foreach (var item in @ViewBag.FormA)
+    {
+    <tr>
+        <td style="text-align:center;">
+            @foreach (var item1 in @ViewBag.Form)
+            {
+                if (item.id_form_academica == item1.id_form_academica)
+                {
+                    @item1.titulo_obtenido
+                }
+            }
+        </td>
+        <td style="text-align:center;">
+            @foreach (var item1 in @ViewBag.Form)
+            {
+                if (item.id_form_academica == item1.id_form_academica)
+                {
+                    @item1.institucion
+                }
+            }
+        </td>
+        <td style="text-align:center;">
+            @foreach (var item1 in @ViewBag.Form)
+            {
+                if (item.id_form_academica == item1.id_form_academica)
+                {
+                    @item1.tipo_educacion
+                }
+            }
+        </td>
+        <td style="text-align:center;">
+            @foreach (var item1 in @ViewBag.Form)
+            {
+                if (item.id_form_academica == item1.id_form_academica)
+                {
+                    @item1.fech_inicio
+                }
+            }
+        </td>
+        <td style="text-align:center;">
+            @foreach (var item1 in @ViewBag.Form)
+            {
+                if (item.id_form_academica == item1.id_form_academica)
+                {
+                    @Convert.ToDateTime(item1.fech_fin)
+                }
+            }
+        </td>
+        <td style="text-align:center;">
+            @Html.ActionLink("Eliminar", "FormacionAcademica", new { id = item.id_cv_form_academica }, new { @class = "btn btn-danger", @onclick = "return confirm('Esta seguro que desea eliminar esta formación?')" })
+        </td>
+    </tr>
+    }
+</table>
+

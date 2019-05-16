@@ -6,15 +6,8 @@
 //     Los cambios manuales en este archivo se sobrescribirán si se regenera el código.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-<<<<<<< HEAD
 namespace Proyecto.Models
 {
-=======
-
-namespace Proyecto.Models { 
-
->>>>>>> Bruno
     using System;
     using System.Collections.Generic;
     
@@ -26,17 +19,8 @@ namespace Proyecto.Models {
             this.detalle_permisos = new HashSet<detalle_permisos>();
             this.usuarios = new HashSet<usuarios>();
         }
-    
         public int id_tipo_usuario { get; set; }
         public string nombre { get; set; }
-<<<<<<< HEAD
-    
-=======
-        [Display(Name = "Tipo de usuario")]
-        [Required(ErrorMessage = "Ingrese el tipo de usuario")]
-        public string tipo_usuario { get; set; }
-
->>>>>>> Bruno
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<detalle_permisos> detalle_permisos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
