@@ -1,0 +1,304 @@
+﻿
+@{
+    ViewBag.Title = "MostrarCV";
+}
+
+<h2>Curriculum</h2>
+<br />
+<h3>Datos Personales</h3>
+<table class="table table-hover" style="width:100%;border: none;margin:auto;">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Apellido
+        </th>
+        <th>
+            Correo
+        </th>
+        <th>
+            Fecha de Nacimiento
+        </th>
+        <th>
+            Dirección
+        </th>
+        <th>
+            Número de Telefono
+        </th>
+        <th>
+            DUI
+        </th>
+        <th>
+            Sexo
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @ViewBag.nombre
+        </td>
+        <td>
+            @ViewBag.apellido1
+        </td>
+        <td>
+            @ViewBag.correo
+        </td>
+        <td>
+            @ViewBag.fecha
+        </td>
+        <td>
+            @ViewBag.direccion
+        </td>
+        <td>
+            @ViewBag.numero;
+        </td>
+        <td>
+            @ViewBag.dui;
+        </td>
+        <td>
+            @ViewBag.sexo;
+        </td>
+    </tr>
+</table>
+<hr />
+<h3>Lista de Idiomas</h3>
+<table class="table table-hover" style="width:100%;border: none;margin:auto;">
+    <tr>
+        <th>
+            Idiomas
+        </th>
+    </tr>
+    @foreach (var item in @ViewBag.Lista)
+    {
+        <tr>
+            <td>
+                @foreach (var item1 in @ViewBag.Idiomas)
+                {
+                    if (item.id_idioma == item1.id_idioma)
+                    {
+                        @item1.nombre
+                    }
+                }
+            </td>
+
+        </tr>
+    }
+</table>
+<hr />
+<h3>Lista de Formación Academica</h3>
+<table class="table table-hover" style="width:100%;border: none;margin:auto;">
+    <tr>
+        <th style="text-align:center;">
+            Titulo Obtenido
+        </th>
+        <th style="text-align:center;">
+            Institucion
+        </th>
+        <th style="text-align:center;">
+            Tipo de Educación
+        </th>
+        <th style="text-align:center;">
+            Fecha de Inicio
+        </th>
+        <th style="text-align:center;">
+            Fecha de Fin
+        </th>
+    </tr>
+    @foreach (var item in @ViewBag.FormA)
+    {
+        <tr>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.Form)
+                {
+                    if (item.id_form_academica == item1.id_form_academica)
+                    {
+                        @item1.titulo_obtenido
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.Form)
+                {
+                    if (item.id_form_academica == item1.id_form_academica)
+                    {
+                        @item1.institucion
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.Form)
+                {
+                    if (item.id_form_academica == item1.id_form_academica)
+                    {
+                        @item1.tipo_educacion
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.Form)
+                {
+                    if (item.id_form_academica == item1.id_form_academica)
+                    {
+                        @item1.fech_inicio
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.Form)
+                {
+                    if (item.id_form_academica == item1.id_form_academica)
+                    {
+                        @Convert.ToDateTime(item1.fech_fin)
+                    }
+                }
+            </td>
+            
+        </tr>
+    }
+</table>
+<hr />
+<h3>Lista de Experiencias Laborales</h3>
+<table class="table table-hover" style="width:100%;border: none;margin:auto;">
+    <tr>
+        <th style="text-align:center;">
+            Empresa
+        </th>
+        <th style="text-align:center;">
+            Cargo
+        </th>
+        <th style="text-align:center;">
+            Jefe Inmediato
+        </th>
+        <th style="text-align:center;">
+            Fecha de Inicio
+        </th>
+        <th style="text-align:center;">
+            Fecha de Fin
+        </th>
+        <th style="text-align:center;">
+            Salario $
+        </th>
+    </tr>
+
+    @foreach (var item in @ViewBag.Exp)
+    {
+        <tr>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.E)
+                {
+                    if (item.id_cv_exp_laboral == item1.id_exp_profesional)
+                    {
+                        @item1.empresa
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.E)
+                {
+                    if (item.id_cv_exp_laboral == item1.id_exp_profesional)
+                    {
+                        @item1.cargo
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.E)
+                {
+                    if (item.id_cv_exp_laboral == item1.id_exp_profesional)
+                    {
+                        @item1.jefe_inmediato
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.E)
+                {
+                    if (item.id_cv_exp_laboral == item1.id_exp_profesional)
+                    {
+                        @item1.fech_inicio
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.E)
+                {
+                    if (item.id_cv_exp_laboral == item1.id_exp_profesional)
+                    {
+                        @item1.fech_fin
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.E)
+                {
+                    if (item.id_cv_exp_laboral == item1.id_exp_profesional)
+                    {
+                        @item1.salario
+                    }
+                }
+            </td>
+        </tr>
+    }
+</table>
+<hr />
+<h3>Lista de Referencias Profesionales</h3>
+<table class="table table-hover" style="width:100%;border: none;margin:auto;">
+    <tr>
+        <th style="text-align:center;">
+            Nombre
+        </th>
+        <th style="text-align:center;">
+            Telefono
+        </th>
+        <th style="text-align:center;">
+            Institución
+        </th>
+        <th style="text-align:center;">
+            Email
+        </th>
+    </tr>
+
+    @foreach (var item in @ViewBag.Ref)
+    {
+        <tr>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.R)
+                {
+                    if (item.id_referencia == item1.id_referencia)
+                    {
+                        @item1.nombre
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.R)
+                {
+                    if (item.id_referencia == item1.id_referencia)
+                    {
+                        @item1.telefono
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.R)
+                {
+                    if (item.id_referencia == item1.id_referencia)
+                    {
+                        @item1.institucion
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.R)
+                {
+                    if (item.id_referencia == item1.id_referencia)
+                    {
+                        @item1.email
+                    }
+                }
+            </td>
+
+        </tr>
+    }
+</table>
+
