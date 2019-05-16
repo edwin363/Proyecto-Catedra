@@ -6,6 +6,7 @@
 //     Los cambios manuales en este archivo se sobrescribirán si se regenera el código.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 namespace Proyecto.Models
 {
     using System;
@@ -19,8 +20,10 @@ namespace Proyecto.Models
             this.detalle_permisos = new HashSet<detalle_permisos>();
             this.usuarios = new HashSet<usuarios>();
         }
+    
         public int id_tipo_usuario { get; set; }
         public string nombre { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<detalle_permisos> detalle_permisos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

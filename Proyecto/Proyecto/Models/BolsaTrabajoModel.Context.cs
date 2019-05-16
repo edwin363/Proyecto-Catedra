@@ -32,20 +32,12 @@ namespace Proyecto.Models
         public virtual DbSet<empleados> empleados { get; set; }
         public virtual DbSet<exp_profesional> exp_profesional { get; set; }
         public virtual DbSet<form_academica> form_academica { get; set; }
-<<<<<<< HEAD
-        public virtual DbSet<instituciones> instituciones { get; set; }
-=======
->>>>>>> Roberto
         public virtual DbSet<ofertas> ofertas { get; set; }
         public virtual DbSet<ofertas_criterios> ofertas_criterios { get; set; }
         public virtual DbSet<permisos> permisos { get; set; }
         public virtual DbSet<refer_personales> refer_personales { get; set; }
         public virtual DbSet<tipos_usuarios> tipos_usuarios { get; set; }
         public virtual DbSet<usuarios> usuarios { get; set; }
-<<<<<<< HEAD
-        public virtual DbSet<curriculum> curriculum { get; set; }
-        public virtual DbSet<idiomas> idiomas { get; set; }
-=======
         public virtual DbSet<idiomas> idiomas { get; set; }
         public virtual DbSet<instituciones> instituciones { get; set; }
         public virtual DbSet<curriculum> curriculum { get; set; }
@@ -53,6 +45,5 @@ namespace Proyecto.Models
         public virtual DbSet<cv_form_academica> cv_form_academica { get; set; }
         public virtual DbSet<cv_idiomas> cv_idiomas { get; set; }
         public virtual DbSet<cv_ref_profesionales> cv_ref_profesionales { get; set; }
->>>>>>> Roberto
     }
 }

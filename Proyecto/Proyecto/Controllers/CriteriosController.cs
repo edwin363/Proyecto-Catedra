@@ -10,7 +10,7 @@ namespace Proyecto.Controllers
 {
     public class CriteriosController : Controller
     {
-        criteriosModel model = new criteriosModel();
+        CriteriosModel model = new CriteriosModel();
 
         // GET: Criterios
         public ActionResult Index()

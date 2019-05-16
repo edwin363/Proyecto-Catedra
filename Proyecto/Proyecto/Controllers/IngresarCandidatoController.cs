@@ -13,7 +13,6 @@ namespace Proyecto.Controllers
     public class IngresarCandidatoController : Controller
     {
 
-
         usuariosModel model = new usuariosModel();
 
         // GET: IngresarCandidato
@@ -32,7 +31,6 @@ namespace Proyecto.Controllers
         [HttpPost]
         public ActionResult Create(usuarios candidato)
         {
-
             string c1, c2;
             candidato.id_tipo_usuario = 4;//tipo candidato
             candidato.password = (SecurityUtils.EncriptarSHA2(candidato.password));//emcriptando contraseña

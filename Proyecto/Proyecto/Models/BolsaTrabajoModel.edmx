@@ -36,52 +36,6 @@
           </Key>
           <Property Name="id_curriculum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_usuario" Type="int" Nullable="false" />
-<<<<<<< HEAD
-          <Property Name="fotografia" Type="varchar" MaxLength="200" />
-          <Property Name="fechaNacimiento" Type="date" Nullable="false" />
-          <Property Name="direccion" Type="varchar(max)" Nullable="false" />
-          <Property Name="numeroTelefono" Type="varchar" MaxLength="8" Nullable="false" />
-          <Property Name="dui" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="sexo" Type="varchar" MaxLength="10" Nullable="false" />
-        </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_exp_laboral' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
-        <EntityType Name="cv_exp_laboral">
-          <Key>
-            <PropertyRef Name="id_curriculum" />
-            <PropertyRef Name="id_exp_profesional" />
-          </Key>
-          <Property Name="id_curriculum" Type="int" Nullable="false" />
-          <Property Name="id_exp_profesional" Type="int" Nullable="false" />
-        </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_form_academica' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
-        <EntityType Name="cv_form_academica">
-          <Key>
-            <PropertyRef Name="id_curriculum" />
-            <PropertyRef Name="id_form_academica" />
-          </Key>
-          <Property Name="id_curriculum" Type="int" Nullable="false" />
-          <Property Name="id_form_academica" Type="int" Nullable="false" />
-        </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_idiomas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
-        <EntityType Name="cv_idiomas">
-          <Key>
-            <PropertyRef Name="id_curriculum" />
-            <PropertyRef Name="id_idioma" />
-          </Key>
-          <Property Name="id_curriculum" Type="int" Nullable="false" />
-          <Property Name="id_idioma" Type="int" Nullable="false" />
-        </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
-        <EntityType Name="cv_ref_profesionales">
-          <Key>
-            <PropertyRef Name="id_curriculum" />
-            <PropertyRef Name="id_referencia" />
-          </Key>
-=======
           <Property Name="fotografia" Type="varchar(max)" />
           <Property Name="fechaNacimiento" Type="date" Nullable="false" />
           <Property Name="direccion" Type="varchar(max)" Nullable="false" />
@@ -119,7 +73,6 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             <PropertyRef Name="id_cv_ref_profesionales" />
           </Key>
           <Property Name="id_cv_ref_profesionales" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
->>>>>>> Roberto
           <Property Name="id_curriculum" Type="int" Nullable="false" />
           <Property Name="id_referencia" Type="int" Nullable="false" />
         </EntityType>
@@ -248,11 +201,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
           <Property Name="estado" Type="int" Nullable="false" />
           <Property Name="codigo" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
-<<<<<<< HEAD
-        <Association Name="FK__aplicacio__id_ca__4316F928">
-=======
         <Association Name="FK__aplicacio__id_ca__47DBAE45">
->>>>>>> Roberto
           <End Role="candidatos_ofertas" Type="Self.candidatos_ofertas" Multiplicity="1" />
           <End Role="aplicacion_notas" Type="Self.aplicacion_notas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -264,11 +213,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__aplicacio__id_of__4222D4EF">
-=======
         <Association Name="FK__aplicacio__id_of__46E78A0C">
->>>>>>> Roberto
           <End Role="ofertas_criterios" Type="Self.ofertas_criterios" Multiplicity="1" />
           <End Role="aplicacion_notas" Type="Self.aplicacion_notas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -280,11 +225,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__candidato__id_cu__3F466844">
-=======
         <Association Name="FK__candidato__id_cu__440B1D61">
->>>>>>> Roberto
           <End Role="curriculum" Type="Self.curriculum" Multiplicity="1" />
           <End Role="candidatos_ofertas" Type="Self.candidatos_ofertas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -296,11 +237,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__candidato__id_of__3E52440B">
-=======
         <Association Name="FK__candidato__id_of__4316F928">
->>>>>>> Roberto
           <End Role="ofertas" Type="Self.ofertas" Multiplicity="1" />
           <End Role="candidatos_ofertas" Type="Self.candidatos_ofertas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -312,27 +249,9 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__cv_exp_la__id_cu__2C3393D0">
-          <End Role="curriculum" Type="Self.curriculum" Multiplicity="1" />
-          <End Role="cv_exp_laboral" Type="Self.cv_exp_laboral" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="curriculum">
-              <PropertyRef Name="id_curriculum" />
-            </Principal>
-            <Dependent Role="cv_exp_laboral">
-              <PropertyRef Name="id_curriculum" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__cv_exp_la__id_ex__2D27B809">
-          <End Role="exp_profesional" Type="Self.exp_profesional" Multiplicity="1" />
-          <End Role="cv_exp_laboral" Type="Self.cv_exp_laboral" Multiplicity="*" />
-=======
         <Association Name="FK__curriculu__id_us__286302EC">
           <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
           <End Role="curriculum" Type="Self.curriculum" Multiplicity="*" />
->>>>>>> Roberto
           <ReferentialConstraint>
             <Principal Role="usuarios">
               <PropertyRef Name="id_usuario" />
@@ -366,11 +285,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__cv_form_a__id_cu__29572725">
-=======
         <Association Name="FK__cv_form_a__id_cu__2B3F6F97">
->>>>>>> Roberto
           <End Role="curriculum" Type="Self.curriculum" Multiplicity="1" />
           <End Role="cv_form_academica" Type="Self.cv_form_academica" Multiplicity="*" />
           <ReferentialConstraint>
@@ -382,11 +297,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__cv_form_a__id_fo__2A4B4B5E">
-=======
         <Association Name="FK__cv_form_a__id_fo__2C3393D0">
->>>>>>> Roberto
           <End Role="form_academica" Type="Self.form_academica" Multiplicity="1" />
           <End Role="cv_form_academica" Type="Self.cv_form_academica" Multiplicity="*" />
           <ReferentialConstraint>
@@ -398,11 +309,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__cv_idioma__id_cu__2F10007B">
-=======
         <Association Name="FK__cv_idioma__id_cu__32E0915F">
->>>>>>> Roberto
           <End Role="curriculum" Type="Self.curriculum" Multiplicity="1" />
           <End Role="cv_idiomas" Type="Self.cv_idiomas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -414,11 +321,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__cv_idioma__id_id__300424B4">
-=======
         <Association Name="FK__cv_idioma__id_id__33D4B598">
->>>>>>> Roberto
           <End Role="idiomas" Type="Self.idiomas" Multiplicity="1" />
           <End Role="cv_idiomas" Type="Self.cv_idiomas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -430,11 +333,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__cv_ref_pr__id_cu__31EC6D26">
-=======
         <Association Name="FK__cv_ref_pr__id_cu__36B12243">
->>>>>>> Roberto
           <End Role="curriculum" Type="Self.curriculum" Multiplicity="1" />
           <End Role="cv_ref_profesionales" Type="Self.cv_ref_profesionales" Multiplicity="*" />
           <ReferentialConstraint>
@@ -446,11 +345,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__cv_ref_pr__id_re__32E0915F">
-=======
         <Association Name="FK__cv_ref_pr__id_re__37A5467C">
->>>>>>> Roberto
           <End Role="refer_personales" Type="Self.refer_personales" Multiplicity="1" />
           <End Role="cv_ref_profesionales" Type="Self.cv_ref_profesionales" Multiplicity="*" />
           <ReferentialConstraint>
@@ -510,11 +405,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__ofertas__id_empl__37A5467C">
-=======
         <Association Name="FK__ofertas__id_empl__3C69FB99">
->>>>>>> Roberto
           <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
           <End Role="ofertas" Type="Self.ofertas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -526,11 +417,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__ofertas_c__id_cr__3A81B327">
-=======
         <Association Name="FK__ofertas_c__id_cr__3F466844">
->>>>>>> Roberto
           <End Role="criterios" Type="Self.criterios" Multiplicity="1" />
           <End Role="ofertas_criterios" Type="Self.ofertas_criterios" Multiplicity="*" />
           <ReferentialConstraint>
@@ -542,11 +429,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="FK__ofertas_c__id_of__3B75D760">
-=======
         <Association Name="FK__ofertas_c__id_of__403A8C7D">
->>>>>>> Roberto
           <End Role="ofertas" Type="Self.ofertas" Multiplicity="1" />
           <End Role="ofertas_criterios" Type="Self.ofertas_criterios" Multiplicity="*" />
           <ReferentialConstraint>
@@ -591,77 +474,6 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
           <EntitySet Name="refer_personales" EntityType="Self.refer_personales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipos_usuarios" EntityType="Self.tipos_usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
-<<<<<<< HEAD
-          <EntitySet Name="cv_exp_laboral" EntityType="Self.cv_exp_laboral" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [cv_exp_laboral].[id_curriculum] AS [id_curriculum], 
-    [cv_exp_laboral].[id_exp_profesional] AS [id_exp_profesional]
-    FROM [dbo].[cv_exp_laboral] AS [cv_exp_laboral]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="cv_form_academica" EntityType="Self.cv_form_academica" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [cv_form_academica].[id_curriculum] AS [id_curriculum], 
-    [cv_form_academica].[id_form_academica] AS [id_form_academica]
-    FROM [dbo].[cv_form_academica] AS [cv_form_academica]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="cv_idiomas" EntityType="Self.cv_idiomas" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [cv_idiomas].[id_curriculum] AS [id_curriculum], 
-    [cv_idiomas].[id_idioma] AS [id_idioma]
-    FROM [dbo].[cv_idiomas] AS [cv_idiomas]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="cv_ref_profesionales" EntityType="Self.cv_ref_profesionales" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [cv_ref_profesionales].[id_curriculum] AS [id_curriculum], 
-    [cv_ref_profesionales].[id_referencia] AS [id_referencia]
-    FROM [dbo].[cv_ref_profesionales] AS [cv_ref_profesionales]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK__aplicacio__id_ca__4316F928" Association="Self.FK__aplicacio__id_ca__4316F928">
-            <End Role="candidatos_ofertas" EntitySet="candidatos_ofertas" />
-            <End Role="aplicacion_notas" EntitySet="aplicacion_notas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__aplicacio__id_of__4222D4EF" Association="Self.FK__aplicacio__id_of__4222D4EF">
-            <End Role="ofertas_criterios" EntitySet="ofertas_criterios" />
-            <End Role="aplicacion_notas" EntitySet="aplicacion_notas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__candidato__id_cu__3F466844" Association="Self.FK__candidato__id_cu__3F466844">
-            <End Role="curriculum" EntitySet="curriculum" />
-            <End Role="candidatos_ofertas" EntitySet="candidatos_ofertas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__candidato__id_of__3E52440B" Association="Self.FK__candidato__id_of__3E52440B">
-            <End Role="ofertas" EntitySet="ofertas" />
-            <End Role="candidatos_ofertas" EntitySet="candidatos_ofertas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__cv_exp_la__id_cu__2C3393D0" Association="Self.FK__cv_exp_la__id_cu__2C3393D0">
-            <End Role="curriculum" EntitySet="curriculum" />
-            <End Role="cv_exp_laboral" EntitySet="cv_exp_laboral" />
-          </AssociationSet>
-          <AssociationSet Name="FK__cv_exp_la__id_ex__2D27B809" Association="Self.FK__cv_exp_la__id_ex__2D27B809">
-            <End Role="exp_profesional" EntitySet="exp_profesional" />
-            <End Role="cv_exp_laboral" EntitySet="cv_exp_laboral" />
-          </AssociationSet>
-          <AssociationSet Name="FK__cv_form_a__id_cu__29572725" Association="Self.FK__cv_form_a__id_cu__29572725">
-            <End Role="curriculum" EntitySet="curriculum" />
-            <End Role="cv_form_academica" EntitySet="cv_form_academica" />
-          </AssociationSet>
-          <AssociationSet Name="FK__cv_form_a__id_fo__2A4B4B5E" Association="Self.FK__cv_form_a__id_fo__2A4B4B5E">
-            <End Role="form_academica" EntitySet="form_academica" />
-            <End Role="cv_form_academica" EntitySet="cv_form_academica" />
-          </AssociationSet>
-          <AssociationSet Name="FK__cv_idioma__id_cu__2F10007B" Association="Self.FK__cv_idioma__id_cu__2F10007B">
-            <End Role="curriculum" EntitySet="curriculum" />
-            <End Role="cv_idiomas" EntitySet="cv_idiomas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__cv_idioma__id_id__300424B4" Association="Self.FK__cv_idioma__id_id__300424B4">
-            <End Role="idiomas" EntitySet="idiomas" />
-            <End Role="cv_idiomas" EntitySet="cv_idiomas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__cv_ref_pr__id_cu__31EC6D26" Association="Self.FK__cv_ref_pr__id_cu__31EC6D26">
-            <End Role="curriculum" EntitySet="curriculum" />
-            <End Role="cv_ref_profesionales" EntitySet="cv_ref_profesionales" />
-          </AssociationSet>
-          <AssociationSet Name="FK__cv_ref_pr__id_re__32E0915F" Association="Self.FK__cv_ref_pr__id_re__32E0915F">
-=======
           <AssociationSet Name="FK__aplicacio__id_ca__47DBAE45" Association="Self.FK__aplicacio__id_ca__47DBAE45">
             <End Role="candidatos_ofertas" EntitySet="candidatos_ofertas" />
             <End Role="aplicacion_notas" EntitySet="aplicacion_notas" />
@@ -711,7 +523,6 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             <End Role="cv_ref_profesionales" EntitySet="cv_ref_profesionales" />
           </AssociationSet>
           <AssociationSet Name="FK__cv_ref_pr__id_re__37A5467C" Association="Self.FK__cv_ref_pr__id_re__37A5467C">
->>>>>>> Roberto
             <End Role="refer_personales" EntitySet="refer_personales" />
             <End Role="cv_ref_profesionales" EntitySet="cv_ref_profesionales" />
           </AssociationSet>
@@ -731,17 +542,6 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             <End Role="usuarios" EntitySet="usuarios" />
             <End Role="empleados" EntitySet="empleados" />
           </AssociationSet>
-<<<<<<< HEAD
-          <AssociationSet Name="FK__ofertas__id_empl__37A5467C" Association="Self.FK__ofertas__id_empl__37A5467C">
-            <End Role="empleados" EntitySet="empleados" />
-            <End Role="ofertas" EntitySet="ofertas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ofertas_c__id_cr__3A81B327" Association="Self.FK__ofertas_c__id_cr__3A81B327">
-            <End Role="criterios" EntitySet="criterios" />
-            <End Role="ofertas_criterios" EntitySet="ofertas_criterios" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ofertas_c__id_of__3B75D760" Association="Self.FK__ofertas_c__id_of__3B75D760">
-=======
           <AssociationSet Name="FK__ofertas__id_empl__3C69FB99" Association="Self.FK__ofertas__id_empl__3C69FB99">
             <End Role="empleados" EntitySet="empleados" />
             <End Role="ofertas" EntitySet="ofertas" />
@@ -751,7 +551,6 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             <End Role="ofertas_criterios" EntitySet="ofertas_criterios" />
           </AssociationSet>
           <AssociationSet Name="FK__ofertas_c__id_of__403A8C7D" Association="Self.FK__ofertas_c__id_of__403A8C7D">
->>>>>>> Roberto
             <End Role="ofertas" EntitySet="ofertas" />
             <End Role="ofertas_criterios" EntitySet="ofertas_criterios" />
           </AssociationSet>
@@ -785,11 +584,9 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
           <Property Name="id_curriculum" Type="Int32" Nullable="false" />
           <NavigationProperty Name="aplicacion_notas" Relationship="Self.FK__aplicacio__id_ca__3C69FB99" FromRole="candidatos_ofertas" ToRole="aplicacion_notas" />
           <NavigationProperty Name="ofertas" Relationship="Self.FK__candidato__id_of__37A5467C" FromRole="candidatos_ofertas" ToRole="ofertas" />
-<<<<<<< HEAD
-          <NavigationProperty Name="curriculum" Relationship="bolsaTrabajoModel.FK__candidato__id_cu__3F466844" FromRole="candidatos_ofertas" ToRole="curriculum" />
-=======
+
           <NavigationProperty Name="curriculum" Relationship="bolsaTrabajoModel.FK__candidato__id_cu__440B1D61" FromRole="candidatos_ofertas" ToRole="curriculum" />
->>>>>>> Roberto
+
         </EntityType>
         <EntityType Name="criterios">
           <Key>
@@ -831,11 +628,9 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
           <Property Name="fech_inicio" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fech_fin" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="salario" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-<<<<<<< HEAD
-          <NavigationProperty Name="curriculum" Relationship="bolsaTrabajoModel.cv_exp_laboral" FromRole="exp_profesional" ToRole="curriculum" />
-=======
+
           <NavigationProperty Name="cv_exp_laboral" Relationship="bolsaTrabajoModel.FK__cv_exp_la__id_ex__300424B4" FromRole="exp_profesional" ToRole="cv_exp_laboral" />
->>>>>>> Roberto
+
           </EntityType>
         <EntityType Name="form_academica">
           <Key>
@@ -847,24 +642,10 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
           <Property Name="fech_fin" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="titulo_obtenido" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="institucion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-<<<<<<< HEAD
-          <NavigationProperty Name="curriculum" Relationship="bolsaTrabajoModel.cv_form_academica" FromRole="form_academica" ToRole="curriculum" />
-          </EntityType>
-        <EntityType Name="instituciones">
-          <Key>
-            <PropertyRef Name="id_institucion" />
-          </Key>
-          <Property Name="id_institucion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="empleados" Relationship="Self.FK__empleados__id_in__239E4DCF" FromRole="instituciones" ToRole="empleados" />
-        </EntityType>
-=======
+
           <NavigationProperty Name="cv_form_academica" Relationship="bolsaTrabajoModel.FK__cv_form_a__id_fo__2C3393D0" FromRole="form_academica" ToRole="cv_form_academica" />
           </EntityType>
->>>>>>> Roberto
+
         <EntityType Name="ofertas">
           <Key>
             <PropertyRef Name="id_oferta" />
@@ -919,11 +700,9 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
           <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="institucion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-<<<<<<< HEAD
-          <NavigationProperty Name="curriculum" Relationship="bolsaTrabajoModel.cv_ref_profesionales" FromRole="refer_personales" ToRole="curriculum" />
-=======
+
           <NavigationProperty Name="cv_ref_profesionales" Relationship="bolsaTrabajoModel.FK__cv_ref_pr__id_re__37A5467C" FromRole="refer_personales" ToRole="cv_ref_profesionales" />
->>>>>>> Roberto
+
           </EntityType>
         <EntityType Name="tipos_usuarios">
           <Key>
@@ -945,31 +724,15 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
           <Property Name="id_tipo_usuario" Type="Int32" Nullable="false" />
           <NavigationProperty Name="empleados" Relationship="Self.FK__empleados__id_us__22AA2996" FromRole="usuarios" ToRole="empleados" />
           <NavigationProperty Name="tipos_usuarios" Relationship="Self.FK__usuarios__id_tip__182C9B23" FromRole="usuarios" ToRole="tipos_usuarios" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> Luis
-=======
->>>>>>> Bruno
-=======
->>>>>>> Roberto
+
           <Property Name="apellido1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellido2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="estado" Type="Int32" Nullable="false" />
           <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> Luis
-=======
->>>>>>> Bruno
-=======
           <NavigationProperty Name="curriculum" Relationship="bolsaTrabajoModel.FK__curriculu__id_us__286302EC" FromRole="usuarios" ToRole="curriculum" />
->>>>>>> Roberto
+
         </EntityType>
         <Association Name="FK__aplicacio__id_ca__3C69FB99">
           <End Role="candidatos_ofertas" Type="Self.candidatos_ofertas" Multiplicity="1" />
@@ -1099,10 +862,8 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
           <EntitySet Name="empleados" EntityType="Self.empleados" />
           <EntitySet Name="exp_profesional" EntityType="Self.exp_profesional" />
           <EntitySet Name="form_academica" EntityType="Self.form_academica" />
-<<<<<<< HEAD
-          <EntitySet Name="instituciones" EntityType="Self.instituciones" />
-=======
->>>>>>> Roberto
+
+
           <EntitySet Name="ofertas" EntityType="Self.ofertas" />
           <EntitySet Name="ofertas_criterios" EntityType="Self.ofertas_criterios" />
           <EntitySet Name="permisos" EntityType="Self.permisos" />
@@ -1149,31 +910,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             <End Role="tipos_usuarios" EntitySet="tipos_usuarios" />
             <End Role="usuarios" EntitySet="usuarios" />
           </AssociationSet>
-<<<<<<< HEAD
-          <EntitySet Name="curriculum" EntityType="bolsaTrabajoModel.curriculum" />
-          <AssociationSet Name="FK__candidato__id_cu__3F466844" Association="bolsaTrabajoModel.FK__candidato__id_cu__3F466844">
-            <End Role="curriculum" EntitySet="curriculum" />
-            <End Role="candidatos_ofertas" EntitySet="candidatos_ofertas" />
-          </AssociationSet>
-          <AssociationSet Name="cv_exp_laboral" Association="bolsaTrabajoModel.cv_exp_laboral">
-            <End Role="curriculum" EntitySet="curriculum" />
-            <End Role="exp_profesional" EntitySet="exp_profesional" />
-          </AssociationSet>
-          <AssociationSet Name="cv_form_academica" Association="bolsaTrabajoModel.cv_form_academica">
-            <End Role="curriculum" EntitySet="curriculum" />
-            <End Role="form_academica" EntitySet="form_academica" />
-          </AssociationSet>
-          <AssociationSet Name="cv_ref_profesionales" Association="bolsaTrabajoModel.cv_ref_profesionales">
-            <End Role="curriculum" EntitySet="curriculum" />
-            <End Role="refer_personales" EntitySet="refer_personales" />
-          </AssociationSet>
-          <EntitySet Name="idiomas" EntityType="bolsaTrabajoModel.idiomas" />
-          <AssociationSet Name="cv_idiomas" Association="bolsaTrabajoModel.cv_idiomas">
-            <End Role="curriculum" EntitySet="curriculum" />
-            <End Role="idiomas" EntitySet="idiomas" />
-          </AssociationSet>
-        </EntityContainer>
-=======
+
           <EntitySet Name="idiomas" EntityType="bolsaTrabajoModel.idiomas" />
           <EntitySet Name="instituciones" EntityType="bolsaTrabajoModel.instituciones" />
           <AssociationSet Name="FK__empleados__id_in__239E4DCF" Association="bolsaTrabajoModel.FK__empleados__id_in__239E4DCF">
@@ -1257,28 +994,14 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
->>>>>>> Roberto
+
         <EntityType Name="curriculum">
           <Key>
             <PropertyRef Name="id_curriculum" />
           </Key>
           <Property Name="id_curriculum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
-<<<<<<< HEAD
-          <Property Name="fotografia" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="direccion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="numeroTelefono" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
-          <Property Name="dui" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="sexo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="candidatos_ofertas" Relationship="bolsaTrabajoModel.FK__candidato__id_cu__3F466844" FromRole="curriculum" ToRole="candidatos_ofertas" />
-          <NavigationProperty Name="exp_profesional" Relationship="bolsaTrabajoModel.cv_exp_laboral" FromRole="curriculum" ToRole="exp_profesional" />
-          <NavigationProperty Name="form_academica" Relationship="bolsaTrabajoModel.cv_form_academica" FromRole="curriculum" ToRole="form_academica" />
-          <NavigationProperty Name="refer_personales" Relationship="bolsaTrabajoModel.cv_ref_profesionales" FromRole="curriculum" ToRole="refer_personales" />
-          <NavigationProperty Name="idiomas" Relationship="bolsaTrabajoModel.cv_idiomas" FromRole="curriculum" ToRole="idiomas" />
-        </EntityType>
-        <Association Name="FK__candidato__id_cu__3F466844">
-=======
+
           <Property Name="fotografia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="direccion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -1334,7 +1057,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
           <NavigationProperty Name="refer_personales" Relationship="bolsaTrabajoModel.FK__cv_ref_pr__id_re__37A5467C" FromRole="cv_ref_profesionales" ToRole="refer_personales" />
         </EntityType>
         <Association Name="FK__candidato__id_cu__440B1D61">
->>>>>>> Roberto
+
           <End Type="bolsaTrabajoModel.curriculum" Role="curriculum" Multiplicity="1" />
           <End Type="bolsaTrabajoModel.candidatos_ofertas" Role="candidatos_ofertas" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1346,33 +1069,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             </Dependent>
           </ReferentialConstraint>
         </Association>
-<<<<<<< HEAD
-        <Association Name="cv_exp_laboral">
-          <End Type="bolsaTrabajoModel.curriculum" Role="curriculum" Multiplicity="*" />
-          <End Type="bolsaTrabajoModel.exp_profesional" Role="exp_profesional" Multiplicity="*" />
-        </Association>
-        <Association Name="cv_form_academica">
-          <End Type="bolsaTrabajoModel.curriculum" Role="curriculum" Multiplicity="*" />
-          <End Type="bolsaTrabajoModel.form_academica" Role="form_academica" Multiplicity="*" />
-        </Association>
-        <Association Name="cv_ref_profesionales">
-          <End Type="bolsaTrabajoModel.curriculum" Role="curriculum" Multiplicity="*" />
-          <End Type="bolsaTrabajoModel.refer_personales" Role="refer_personales" Multiplicity="*" />
-        </Association>
-        <EntityType Name="idiomas">
-          <Key>
-            <PropertyRef Name="id_idioma" />
-          </Key>
-          <Property Name="id_idioma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="curriculum" Relationship="bolsaTrabajoModel.cv_idiomas" FromRole="idiomas" ToRole="curriculum" />
-        </EntityType>
-        <Association Name="cv_idiomas">
-          <End Type="bolsaTrabajoModel.curriculum" Role="curriculum" Multiplicity="*" />
-          <End Type="bolsaTrabajoModel.idiomas" Role="idiomas" Multiplicity="*" />
-        </Association>
-      </Schema>
-=======
+
         <Association Name="FK__curriculu__id_us__286302EC">
           <End Type="bolsaTrabajoModel.usuarios" Role="usuarios" Multiplicity="1" />
           <End Type="bolsaTrabajoModel.curriculum" Role="curriculum" Multiplicity="*" />
@@ -1482,7 +1179,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
           </ReferentialConstraint>
         </Association>
         </Schema>
->>>>>>> Roberto
+
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1559,20 +1256,8 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-<<<<<<< HEAD
-          <EntitySetMapping Name="instituciones">
-            <EntityTypeMapping TypeName="bolsaTrabajoModel.instituciones">
-              <MappingFragment StoreEntitySet="instituciones">
-                <ScalarProperty Name="id_institucion" ColumnName="id_institucion" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="email" ColumnName="email" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-=======
->>>>>>> Roberto
+
+
           <EntitySetMapping Name="ofertas">
             <EntityTypeMapping TypeName="bolsaTrabajoModel.ofertas">
               <MappingFragment StoreEntitySet="ofertas">
@@ -1648,11 +1333,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-<<<<<<< HEAD
-          <EntitySetMapping Name="curriculum">
-            <EntityTypeMapping TypeName="bolsaTrabajoModel.curriculum">
-              <MappingFragment StoreEntitySet="curriculum">
-=======
+
           <EntitySetMapping Name="idiomas">
             <EntityTypeMapping TypeName="bolsaTrabajoModel.idiomas">
               <MappingFragment StoreEntitySet="idiomas">
@@ -1676,7 +1357,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
             <EntityTypeMapping TypeName="bolsaTrabajoModel.curriculum">
               <MappingFragment StoreEntitySet="curriculum">
                 <ScalarProperty Name="estado" ColumnName="estado" />
->>>>>>> Roberto
+
                 <ScalarProperty Name="sexo" ColumnName="sexo" />
                 <ScalarProperty Name="dui" ColumnName="dui" />
                 <ScalarProperty Name="numeroTelefono" ColumnName="numeroTelefono" />
@@ -1688,48 +1369,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-<<<<<<< HEAD
-          <AssociationSetMapping Name="cv_exp_laboral" TypeName="bolsaTrabajoModel.cv_exp_laboral" StoreEntitySet="cv_exp_laboral">
-            <EndProperty Name="exp_profesional">
-              <ScalarProperty Name="id_exp_profesional" ColumnName="id_exp_profesional" />
-            </EndProperty>
-            <EndProperty Name="curriculum">
-              <ScalarProperty Name="id_curriculum" ColumnName="id_curriculum" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="cv_form_academica" TypeName="bolsaTrabajoModel.cv_form_academica" StoreEntitySet="cv_form_academica">
-            <EndProperty Name="form_academica">
-              <ScalarProperty Name="id_form_academica" ColumnName="id_form_academica" />
-            </EndProperty>
-            <EndProperty Name="curriculum">
-              <ScalarProperty Name="id_curriculum" ColumnName="id_curriculum" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="cv_ref_profesionales" TypeName="bolsaTrabajoModel.cv_ref_profesionales" StoreEntitySet="cv_ref_profesionales">
-            <EndProperty Name="refer_personales">
-              <ScalarProperty Name="id_referencia" ColumnName="id_referencia" />
-            </EndProperty>
-            <EndProperty Name="curriculum">
-              <ScalarProperty Name="id_curriculum" ColumnName="id_curriculum" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <EntitySetMapping Name="idiomas">
-            <EntityTypeMapping TypeName="bolsaTrabajoModel.idiomas">
-              <MappingFragment StoreEntitySet="idiomas">
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="id_idioma" ColumnName="id_idioma" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="cv_idiomas" TypeName="bolsaTrabajoModel.cv_idiomas" StoreEntitySet="cv_idiomas">
-            <EndProperty Name="idiomas">
-              <ScalarProperty Name="id_idioma" ColumnName="id_idioma" />
-            </EndProperty>
-            <EndProperty Name="curriculum">
-              <ScalarProperty Name="id_curriculum" ColumnName="id_curriculum" />
-            </EndProperty>
-          </AssociationSetMapping>
-=======
+
           <EntitySetMapping Name="cv_exp_laboral">
             <EntityTypeMapping TypeName="bolsaTrabajoModel.cv_exp_laboral">
               <MappingFragment StoreEntitySet="cv_exp_laboral">
@@ -1766,7 +1406,7 @@ advertencia 6002: La tabla o vista 'bolsaTrabajo.dbo.cv_ref_profesionales' no ti
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
->>>>>>> Roberto
+
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

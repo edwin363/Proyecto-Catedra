@@ -32,7 +32,6 @@ namespace Proyecto.Models
         public string numeroTelefono { get; set; }
         public string dui { get; set; }
         public string sexo { get; set; }
-
         public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -46,6 +45,5 @@ namespace Proyecto.Models
         public virtual ICollection<cv_idiomas> cv_idiomas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<cv_ref_profesionales> cv_ref_profesionales { get; set; }
-
     }
 }

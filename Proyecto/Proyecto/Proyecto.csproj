@@ -134,21 +134,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\IngresarCandidatoController.cs" />
-
     <Compile Include="Controllers\CriteriosController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngresarCandidatoController.cs" />
     <Compile Include="Controllers\InstitucionesController.cs" />
     <Compile Include="Controllers\OfertasController.cs" />
     <Compile Include="Controllers\OfertasCriteriosController.cs" />
-
     <Compile Include="Controllers\CurriculumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\IngresarCandidatoController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -321,10 +314,8 @@
     <Content Include="Views\Ofertas\Create.cshtml" />
     <Content Include="Views\Ofertas\Edit.cshtml" />
     <Content Include="Views\Ofertas\Details.cshtml" />
-
     <Content Include="Views\Usuarios\verempleados.cshtml" />
     <Content Include="Views\Usuarios\Create.cshtml" />
-
     <Content Include="Views\Usuarios\Recuperar.cshtml" />
     <Content Include="Views\Usuarios\AsignarContra.cshtml" />
     <Content Include="Views\IngresarCandidato\Validar.cshtml" />
