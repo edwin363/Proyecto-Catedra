@@ -134,15 +134,21 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+
     <Compile Include="Controllers\CandidatosOfertasController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+
+    
+
     <Compile Include="Controllers\CriteriosController.cs" />
     <Compile Include="Controllers\IngresarCandidatoController.cs" />
     <Compile Include="Controllers\InstitucionesController.cs" />
     <Compile Include="Controllers\OfertasController.cs" />
     <Compile Include="Controllers\OfertasCriteriosController.cs" />
+
     <Compile Include="Controllers\CurriculumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -183,11 +189,13 @@
     <Compile Include="Models\cv_exp_laboral.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+
     <Compile Include="Models\cv_FormacionModel.cs" />
     <Compile Include="Models\cv_form_academica.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\cv_IdiomaModel.cs" />
+
     <Compile Include="Models\cv_idiomas.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
@@ -316,6 +324,7 @@
     <Content Include="Views\Ofertas\Create.cshtml" />
     <Content Include="Views\Ofertas\Edit.cshtml" />
     <Content Include="Views\Ofertas\Details.cshtml" />
+
     <Content Include="Views\Usuarios\verempleados.cshtml" />
     <Content Include="Views\Usuarios\Create.cshtml" />
     <Content Include="Views\Usuarios\Recuperar.cshtml" />
@@ -330,10 +339,14 @@
     <Content Include="Views\Default\candiToAp.cshtml" />
     <Content Include="Views\Default\Details.cshtml" />
 
+
+    <Content Include="Views\OfertasCriterios\Index.cshtml" />
+    <Content Include="Views\OfertasCriterios\Create.cshtml" />
+    <Content Include="Views\OfertasCriterios\Edit.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\OfertasCriterios\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

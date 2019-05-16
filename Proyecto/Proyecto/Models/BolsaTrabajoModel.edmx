@@ -613,9 +613,9 @@
           <Property Name="id_empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
           <Property Name="id_institucion" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="usuarios" Relationship="Self.FK__empleados__id_us__22AA2996" FromRole="empleados" ToRole="usuarios" />
           <NavigationProperty Name="ofertas" Relationship="Self.FK__ofertas__id_empl__30F848ED" FromRole="empleados" ToRole="ofertas" />
           <NavigationProperty Name="instituciones" Relationship="bolsaTrabajoModel.FK__empleados__id_in__239E4DCF" FromRole="empleados" ToRole="instituciones" />
+          <NavigationProperty Name="usuarios" Relationship="bolsaTrabajoModel.FK__empleados__id_us__22AA2996" FromRole="empleados" ToRole="usuarios" />
         </EntityType>
         <EntityType Name="exp_profesional">
           <Key>
@@ -711,28 +711,7 @@
           <Property Name="id_tipo_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="detalle_permisos" Relationship="Self.FK__detalle_p__id_ti__1B0907CE" FromRole="tipos_usuarios" ToRole="detalle_permisos" />
-          <NavigationProperty Name="usuarios" Relationship="Self.FK__usuarios__id_tip__182C9B23" FromRole="tipos_usuarios" ToRole="usuarios" />
-        </EntityType>
-        <EntityType Name="usuarios">
-          <Key>
-            <PropertyRef Name="id_usuario" />
-          </Key>
-          <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="id_tipo_usuario" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="empleados" Relationship="Self.FK__empleados__id_us__22AA2996" FromRole="usuarios" ToRole="empleados" />
-          <NavigationProperty Name="tipos_usuarios" Relationship="Self.FK__usuarios__id_tip__182C9B23" FromRole="usuarios" ToRole="tipos_usuarios" />
-
-
-          <Property Name="apellido1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="apellido2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="estado" Type="Int32" Nullable="false" />
-          <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-
-          <NavigationProperty Name="curriculum" Relationship="bolsaTrabajoModel.FK__curriculu__id_us__286302EC" FromRole="usuarios" ToRole="curriculum" />
-
+          <NavigationProperty Name="usuarios" Relationship="bolsaTrabajoModel.FK__usuarios__id_tip__182C9B23" FromRole="tipos_usuarios" ToRole="usuarios" />
         </EntityType>
         <Association Name="FK__aplicacio__id_ca__3C69FB99">
           <End Role="candidatos_ofertas" Type="Self.candidatos_ofertas" Multiplicity="1" />
@@ -806,18 +785,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__empleados__id_us__22AA2996">
-          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
-          <End Role="empleados" Type="Self.empleados" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="usuarios">
-              <PropertyRef Name="id_usuario" />
-            </Principal>
-            <Dependent Role="empleados">
-              <PropertyRef Name="id_usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__ofertas__id_empl__30F848ED">
           <End Role="empleados" Type="Self.empleados" Multiplicity="1" />
           <End Role="ofertas" Type="Self.ofertas" Multiplicity="*" />
@@ -842,18 +809,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__usuarios__id_tip__182C9B23">
-          <End Role="tipos_usuarios" Type="Self.tipos_usuarios" Multiplicity="1" />
-          <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tipos_usuarios">
-              <PropertyRef Name="id_tipo_usuario" />
-            </Principal>
-            <Dependent Role="usuarios">
-              <PropertyRef Name="id_tipo_usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="bolsaTrabajoEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="aplicacion_notas" EntityType="Self.aplicacion_notas" />
           <EntitySet Name="candidatos_ofertas" EntityType="Self.candidatos_ofertas" />
@@ -863,13 +818,11 @@
           <EntitySet Name="exp_profesional" EntityType="Self.exp_profesional" />
           <EntitySet Name="form_academica" EntityType="Self.form_academica" />
 
-
           <EntitySet Name="ofertas" EntityType="Self.ofertas" />
           <EntitySet Name="ofertas_criterios" EntityType="Self.ofertas_criterios" />
           <EntitySet Name="permisos" EntityType="Self.permisos" />
           <EntitySet Name="refer_personales" EntityType="Self.refer_personales" />
           <EntitySet Name="tipos_usuarios" EntityType="Self.tipos_usuarios" />
-          <EntitySet Name="usuarios" EntityType="Self.usuarios" />
           <AssociationSet Name="FK__aplicacio__id_ca__3C69FB99" Association="Self.FK__aplicacio__id_ca__3C69FB99">
             <End Role="candidatos_ofertas" EntitySet="candidatos_ofertas" />
             <End Role="aplicacion_notas" EntitySet="aplicacion_notas" />
@@ -894,10 +847,6 @@
             <End Role="tipos_usuarios" EntitySet="tipos_usuarios" />
             <End Role="detalle_permisos" EntitySet="detalle_permisos" />
           </AssociationSet>
-          <AssociationSet Name="FK__empleados__id_us__22AA2996" Association="Self.FK__empleados__id_us__22AA2996">
-            <End Role="usuarios" EntitySet="usuarios" />
-            <End Role="empleados" EntitySet="empleados" />
-          </AssociationSet>
           <AssociationSet Name="FK__ofertas__id_empl__30F848ED" Association="Self.FK__ofertas__id_empl__30F848ED">
             <End Role="empleados" EntitySet="empleados" />
             <End Role="ofertas" EntitySet="ofertas" />
@@ -905,10 +854,6 @@
           <AssociationSet Name="FK__ofertas_c__id_of__34C8D9D1" Association="Self.FK__ofertas_c__id_of__34C8D9D1">
             <End Role="ofertas" EntitySet="ofertas" />
             <End Role="ofertas_criterios" EntitySet="ofertas_criterios" />
-          </AssociationSet>
-          <AssociationSet Name="FK__usuarios__id_tip__182C9B23" Association="Self.FK__usuarios__id_tip__182C9B23">
-            <End Role="tipos_usuarios" EntitySet="tipos_usuarios" />
-            <End Role="usuarios" EntitySet="usuarios" />
           </AssociationSet>
 
           <EntitySet Name="idiomas" EntityType="bolsaTrabajoModel.idiomas" />
@@ -925,10 +870,6 @@
           <AssociationSet Name="FK__candidato__id_cu__440B1D61" Association="bolsaTrabajoModel.FK__candidato__id_cu__440B1D61">
             <End Role="curriculum" EntitySet="curriculum" />
             <End Role="candidatos_ofertas" EntitySet="candidatos_ofertas" />
-          </AssociationSet>
-          <AssociationSet Name="FK__curriculu__id_us__286302EC" Association="bolsaTrabajoModel.FK__curriculu__id_us__286302EC">
-            <End Role="usuarios" EntitySet="usuarios" />
-            <End Role="curriculum" EntitySet="curriculum" />
           </AssociationSet>
           <AssociationSet Name="FK__cv_exp_la__id_cu__2F10007B" Association="bolsaTrabajoModel.FK__cv_exp_la__id_cu__2F10007B">
             <End Role="curriculum" EntitySet="curriculum" />
@@ -957,12 +898,27 @@
           <AssociationSet Name="FK__cv_idioma__id_id__33D4B598" Association="bolsaTrabajoModel.FK__cv_idioma__id_id__33D4B598">
             <End Role="idiomas" EntitySet="idiomas" />
             <End Role="cv_idiomas" EntitySet="cv_idiomas" />
+
           </AssociationSet>
           <AssociationSet Name="FK__cv_ref_pr__id_re__37A5467C" Association="bolsaTrabajoModel.FK__cv_ref_pr__id_re__37A5467C">
             <End Role="refer_personales" EntitySet="refer_personales" />
             <End Role="cv_ref_profesionales" EntitySet="cv_ref_profesionales" />
           </AssociationSet>
-          </EntityContainer>
+          <EntitySet Name="usuarios" EntityType="bolsaTrabajoModel.usuarios" />
+          <AssociationSet Name="FK__curriculu__id_us__286302EC" Association="bolsaTrabajoModel.FK__curriculu__id_us__286302EC">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="curriculum" EntitySet="curriculum" />
+          </AssociationSet>
+          <AssociationSet Name="FK__empleados__id_us__22AA2996" Association="bolsaTrabajoModel.FK__empleados__id_us__22AA2996">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="empleados" EntitySet="empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK__usuarios__id_tip__182C9B23" Association="bolsaTrabajoModel.FK__usuarios__id_tip__182C9B23">
+            <End Role="tipos_usuarios" EntitySet="tipos_usuarios" />
+            <End Role="usuarios" EntitySet="usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+
         <EntityType Name="idiomas">
           <Key>
             <PropertyRef Name="id_idioma" />
@@ -1010,11 +966,11 @@
           <Property Name="sexo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="Int32" Nullable="false" />
           <NavigationProperty Name="candidatos_ofertas" Relationship="bolsaTrabajoModel.FK__candidato__id_cu__440B1D61" FromRole="curriculum" ToRole="candidatos_ofertas" />
-          <NavigationProperty Name="usuarios" Relationship="bolsaTrabajoModel.FK__curriculu__id_us__286302EC" FromRole="curriculum" ToRole="usuarios" />
           <NavigationProperty Name="cv_exp_laboral" Relationship="bolsaTrabajoModel.FK__cv_exp_la__id_cu__2F10007B" FromRole="curriculum" ToRole="cv_exp_laboral" />
           <NavigationProperty Name="cv_form_academica" Relationship="bolsaTrabajoModel.FK__cv_form_a__id_cu__2B3F6F97" FromRole="curriculum" ToRole="cv_form_academica" />
           <NavigationProperty Name="cv_idiomas" Relationship="bolsaTrabajoModel.FK__cv_idioma__id_cu__32E0915F" FromRole="curriculum" ToRole="cv_idiomas" />
           <NavigationProperty Name="cv_ref_profesionales" Relationship="bolsaTrabajoModel.FK__cv_ref_pr__id_cu__36B12243" FromRole="curriculum" ToRole="cv_ref_profesionales" />
+          <NavigationProperty Name="usuarios" Relationship="bolsaTrabajoModel.FK__curriculu__id_us__286302EC" FromRole="curriculum" ToRole="usuarios" />
         </EntityType>
         <EntityType Name="cv_exp_laboral">
           <Key>
@@ -1025,6 +981,7 @@
           <Property Name="id_exp_profesional" Type="Int32" Nullable="false" />
           <NavigationProperty Name="curriculum" Relationship="bolsaTrabajoModel.FK__cv_exp_la__id_cu__2F10007B" FromRole="cv_exp_laboral" ToRole="curriculum" />
           <NavigationProperty Name="exp_profesional" Relationship="bolsaTrabajoModel.FK__cv_exp_la__id_ex__300424B4" FromRole="cv_exp_laboral" ToRole="exp_profesional" />
+
         </EntityType>
         <EntityType Name="cv_form_academica">
           <Key>
@@ -1066,19 +1023,6 @@
             </Principal>
             <Dependent Role="candidatos_ofertas">
               <PropertyRef Name="id_curriculum" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-
-        <Association Name="FK__curriculu__id_us__286302EC">
-          <End Type="bolsaTrabajoModel.usuarios" Role="usuarios" Multiplicity="1" />
-          <End Type="bolsaTrabajoModel.curriculum" Role="curriculum" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="usuarios">
-              <PropertyRef Name="id_usuario" />
-            </Principal>
-            <Dependent Role="curriculum">
-              <PropertyRef Name="id_usuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1178,6 +1122,59 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="usuarios">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="apellido1" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="apellido2" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="id_tipo_usuario" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="codigo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="curriculum" Relationship="bolsaTrabajoModel.FK__curriculu__id_us__286302EC" FromRole="usuarios" ToRole="curriculum" />
+          <NavigationProperty Name="empleados" Relationship="bolsaTrabajoModel.FK__empleados__id_us__22AA2996" FromRole="usuarios" ToRole="empleados" />
+          <NavigationProperty Name="tipos_usuarios" Relationship="bolsaTrabajoModel.FK__usuarios__id_tip__182C9B23" FromRole="usuarios" ToRole="tipos_usuarios" />
+        </EntityType>
+        <Association Name="FK__curriculu__id_us__286302EC">
+          <End Type="bolsaTrabajoModel.usuarios" Role="usuarios" Multiplicity="1" />
+          <End Type="bolsaTrabajoModel.curriculum" Role="curriculum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="curriculum">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__empleados__id_us__22AA2996">
+          <End Type="bolsaTrabajoModel.usuarios" Role="usuarios" Multiplicity="1" />
+          <End Type="bolsaTrabajoModel.empleados" Role="empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="empleados">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__usuarios__id_tip__182C9B23">
+          <End Type="bolsaTrabajoModel.tipos_usuarios" Role="tipos_usuarios" Multiplicity="1" />
+          <End Type="bolsaTrabajoModel.usuarios" Role="usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipos_usuarios">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Principal>
+            <Dependent Role="usuarios">
+              <PropertyRef Name="id_tipo_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
 
     </edmx:ConceptualModels>
@@ -1257,7 +1254,6 @@
             </EntityTypeMapping>
           </EntitySetMapping>
 
-
           <EntitySetMapping Name="ofertas">
             <EntityTypeMapping TypeName="bolsaTrabajoModel.ofertas">
               <MappingFragment StoreEntitySet="ofertas">
@@ -1315,21 +1311,6 @@
               <MappingFragment StoreEntitySet="tipos_usuarios">
                 <ScalarProperty Name="id_tipo_usuario" ColumnName="id_tipo_usuario" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="usuarios">
-            <EntityTypeMapping TypeName="bolsaTrabajoModel.usuarios">
-              <MappingFragment StoreEntitySet="usuarios">
-                <ScalarProperty Name="codigo" ColumnName="codigo" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-                <ScalarProperty Name="apellido2" ColumnName="apellido2" />
-                <ScalarProperty Name="apellido1" ColumnName="apellido1" />
-                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="id_tipo_usuario" ColumnName="id_tipo_usuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1403,6 +1384,21 @@
                 <ScalarProperty Name="id_referencia" ColumnName="id_referencia" />
                 <ScalarProperty Name="id_curriculum" ColumnName="id_curriculum" />
                 <ScalarProperty Name="id_cv_ref_profesionales" ColumnName="id_cv_ref_profesionales" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="bolsaTrabajoModel.usuarios">
+              <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="id_tipo_usuario" ColumnName="id_tipo_usuario" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+                <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

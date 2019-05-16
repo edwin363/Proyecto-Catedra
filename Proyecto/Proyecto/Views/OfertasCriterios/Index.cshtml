@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Proyecto.Models.ofertas_criterios>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ofertas Criterios @ViewBag.mes</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_oferta_crit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_criterio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.porcentaje)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_oferta)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_oferta_crit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.criterios.nombre_criterio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.porcentaje)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ofertas.nombre_puesto)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_oferta_crit }, new { @class = "btn btn-primary" }) |
+            @*@Html.ActionLink("Detalles", "Details", new { /* id=item.PrimaryKey */ }) |*@
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_oferta_crit }, new { @class = "btn btn-danger", @onclick = "return confirm('Esta seguro que quiere eliminar este criterio de evaluación')" })
+        </td>
+    </tr>
+}
+
+</table>

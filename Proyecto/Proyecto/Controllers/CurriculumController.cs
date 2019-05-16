@@ -37,7 +37,7 @@ namespace Proyecto.Controllers
                     if (model.Insert(curriculum) > 0)
                     {
                         TempData["successMessage"] = "Primer Paso Ingresado";
-                        return RedirectToAction("Validar");
+                        return RedirectToAction("Idioma");
                     }
                 }
             }

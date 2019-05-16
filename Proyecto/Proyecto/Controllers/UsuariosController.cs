@@ -88,7 +88,10 @@ namespace Proyecto.Controllers
         {
             return View();
         }
-
+        public  ActionResult Create()
+        {
+            return View();
+        }
         // POST: empleados/Create
         [HttpPost]
         public ActionResult Create(usuarios empleado, empleados asignando)
@@ -214,7 +217,7 @@ namespace Proyecto.Controllers
             {
                 try
                 {
-                    user.password = pass1;
+                    user.password = SecurityUtils.EncriptarSHA2(pass1);
                     if (model.Update(user, user.id_usuario) > 0)
                     {
                         ModelState.AddModelError("email", "Su contraseña ha sido restablecida");

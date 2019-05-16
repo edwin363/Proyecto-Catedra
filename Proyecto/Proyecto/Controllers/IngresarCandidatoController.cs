@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Proyecto.utils;
 using System.Net.Mail;
 using System.Net;
+using System.Diagnostics;
 
 namespace Proyecto.Controllers
 {
@@ -35,34 +36,40 @@ namespace Proyecto.Controllers
             candidato.id_tipo_usuario = 4;//tipo candidato
             candidato.password = (SecurityUtils.EncriptarSHA2(candidato.password));//emcriptando contraseña
             candidato.estado = 0;//estado no veirficado
+            
+            
             //generando codigo
             c1 = candidato.apellido1.Substring(0, 1);
             c2 = candidato.apellido2.Substring(0, 1);
 
-            System.Random randomGenerate = new System.Random();
-            System.String sPassword = "";
-            sPassword = System.Convert.ToString(randomGenerate.Next(00000001, 99999999));
-            sPassword.Substring(sPassword.Length - 8, 8);
-
+            //Random randomGenerate = new Random();
+            //string sPassword = "";
+            //sPassword = Convert.ToString(randomGenerate.Next(00000001, 99999999));
+            //sPassword.Substring(sPassword.Length - 8, 8);
+            Random rdn = new Random();
+            int a = rdn.Next(1000000, 99999999);
+            string num = a.ToString();
             //agregando codigo
-            candidato.codigo = c1 + c2 + sPassword.Substring(sPassword.Length - 8, 8);
-
+            candidato.codigo = c1 + c2 + num;
+            
             try
             {
-                if (ModelState.IsValid)
-                {
+                //if (ModelState.IsValid)
+                //{
+                    
                     if (model.Insert(candidato) > 0)
                     {
                         validarUsuario(candidato.email, candidato.codigo);
                         TempData["successMessage"] = "Verifique su correo para validar su registro";
                         return RedirectToAction("Validar");
                     }
-                    TempData["successMessage"] = "Error al ingresar el candidato";
-                }
+                //    TempData["successMessage"] = "Error al ingresar el candidato";
+                //}
                 return View(candidato);
             }
-            catch
+            catch(Exception e)
             {
+                Debug.WriteLine(e);
                 return View();
             }
         }
@@ -76,6 +83,7 @@ namespace Proyecto.Controllers
         [HttpPost]
         public ActionResult Validar(string codigo)
         {
+            Debug.WriteLine(codigo);
             if (string.IsNullOrWhiteSpace(codigo))
             {
                 ModelState.AddModelError("email", "Debes ingresar el codigo");

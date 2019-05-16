@@ -12,12 +12,14 @@ public class DefaultController : Controller
     tipos_usuariosModel model6 = new tipos_usuariosModel();
     usuariosModel model5 = new usuariosModel();
     ofertasModel model = new ofertasModel();
+
     empleadosModel model2 = new empleadosModel();
     curriculumModel model3 = new curriculumModel();
     candidatos_ofertasModel model4 = new candidatos_ofertasModel();
     
     // GET: Default
     public ActionResult Index()
+
         {
             usuarios user = new usuarios();
             user = (usuarios)Session["usuario"];

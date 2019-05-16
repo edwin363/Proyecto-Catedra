@@ -24,9 +24,9 @@ namespace Proyecto.Models
         public int id_usuario { get; set; }
         public int id_institucion { get; set; }
     
-        public virtual usuarios usuarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ofertas> ofertas { get; set; }
         public virtual instituciones instituciones { get; set; }
+        public virtual usuarios usuarios { get; set; }
     }
 }
