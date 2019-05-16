@@ -5,7 +5,11 @@ using System.Web;
 
 namespace Proyecto.Models
 {
-    public class EmpleadosModel
+    public class EmpleadosModel : AbstractModel<empleados>
     {
+        public empleados getEmpleado(int id)
+        {
+            return ctx.empleados.Where(u => u.id_usuario == id).FirstOrDefault();
+        }
     }
 }
