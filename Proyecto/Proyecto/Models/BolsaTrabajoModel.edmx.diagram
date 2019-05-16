@@ -13,9 +13,12 @@
         <EntityTypeShape EntityType="bolsaTrabajoModel.exp_profesional" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bolsaTrabajoModel.form_academica" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <EntityTypeShape EntityType="bolsaTrabajoModel.instituciones" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
 =======
 >>>>>>> Roberto
+=======
+>>>>>>> Luis
         <EntityTypeShape EntityType="bolsaTrabajoModel.ofertas" Width="1.5" PointX="10.5" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="bolsaTrabajoModel.ofertas_criterios" Width="1.5" PointX="15.75" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="bolsaTrabajoModel.permisos" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
@@ -34,10 +37,13 @@
         <AssociationConnector Association="bolsaTrabajoModel.FK__usuarios__id_tip__182C9B23" ManuallyRouted="false" />
         <EntityTypeShape EntityType="bolsaTrabajoModel.idiomas" Width="1.5" PointX="3" PointY="22.5" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <EntityTypeShape EntityType="bolsaTrabajoModel.curriculum" Width="1.5" PointX="5.25" PointY="8.75" />
+=======
+>>>>>>> Luis
         <EntityTypeShape EntityType="bolsaTrabajoModel.sysdiagrams" Width="1.5" PointX="5.375" PointY="0.75" />
-        <AssociationConnector Association="bolsaTrabajoModel.FK__candidato__id_cu__3F466844" />
         <AssociationConnector Association="bolsaTrabajoModel.fk_usuario" />
+<<<<<<< HEAD
         <AssociationConnector Association="bolsaTrabajoModel.cv_exp_laboral" />
         <AssociationConnector Association="bolsaTrabajoModel.cv_form_academica" />
         <AssociationConnector Association="bolsaTrabajoModel.cv_idiomas" />
@@ -49,6 +55,15 @@
         <EntityTypeShape EntityType="bolsaTrabajoModel.cv_form_academica" Width="1.5" PointX="7.5" PointY="13" />
         <EntityTypeShape EntityType="bolsaTrabajoModel.cv_idiomas" Width="1.5" PointX="10.5" PointY="15.375" />
         <EntityTypeShape EntityType="bolsaTrabajoModel.cv_ref_profesionales" Width="1.5" PointX="7.5" PointY="15.75" />
+=======
+        <EntityTypeShape EntityType="bolsaTrabajoModel.instituciones" Width="1.5" PointX="5.375" PointY="0.875" />
+        <AssociationConnector Association="bolsaTrabajoModel.FK__empleados__id_in__239E4DCF" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.curriculum" Width="1.5" PointX="5.25" PointY="8.75" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.cv_exp_laboral" Width="1.5" PointX="7.5" PointY="6.25" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.cv_form_academica" Width="1.5" PointX="7.5" PointY="13" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.cv_idiomas" Width="1.5" PointX="7.5" PointY="16.375" />
+        <EntityTypeShape EntityType="bolsaTrabajoModel.cv_ref_profesionales" Width="1.5" PointX="10.5" PointY="13.75" />
+>>>>>>> Luis
         <AssociationConnector Association="bolsaTrabajoModel.FK__candidato__id_cu__440B1D61" />
         <AssociationConnector Association="bolsaTrabajoModel.FK__curriculu__id_us__286302EC" />
         <AssociationConnector Association="bolsaTrabajoModel.FK__cv_exp_la__id_cu__2F10007B" />
@@ -59,7 +74,10 @@
         <AssociationConnector Association="bolsaTrabajoModel.FK__cv_form_a__id_fo__2C3393D0" />
         <AssociationConnector Association="bolsaTrabajoModel.FK__cv_idioma__id_id__33D4B598" />
         <AssociationConnector Association="bolsaTrabajoModel.FK__cv_ref_pr__id_re__37A5467C" />
+<<<<<<< HEAD
 >>>>>>> Roberto
+=======
+>>>>>>> Luis
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

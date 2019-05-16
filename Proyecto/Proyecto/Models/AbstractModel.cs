@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
@@ -50,14 +51,16 @@ public abstract class AbstractModel<T> where T:class
             T old = dbSet.Find(id);
             if (old != null)
             {
+                Debug.WriteLine(entity);
                 ctx.Entry(old).CurrentValues.SetValues(entity);
                 ctx.SaveChanges();
                 return 1;
             }
             return 0;
         }
-        catch
+        catch (Exception e)
         {
+            Debug.WriteLine(e);
             return 0;
         }
     }

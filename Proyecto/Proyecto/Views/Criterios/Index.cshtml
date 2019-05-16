@@ -30,7 +30,7 @@
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.id_criterio }, new { @class = "btn btn-primary" }) |
-            @Html.ActionLink("Ver detalles", "Details", new { /* id=item.PrimaryKey */ }) |
+            @*@Html.ActionLink("Ver detalles", "Details", new { /* id=item.PrimaryKey */ }) |*@
             @Html.ActionLink("Eliminar", "Delete", new { id=item.id_criterio  }, new { @class = "btn btn-danger", @onclick = "return confirm('Esta seguro que quiere eliminar este criterio')" })
         </td>
     </tr>
