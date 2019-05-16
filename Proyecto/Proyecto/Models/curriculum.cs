@@ -18,14 +18,13 @@ namespace Proyecto.Models
         public curriculum()
         {
             this.candidatos_ofertas = new HashSet<candidatos_ofertas>();
-            this.exp_profesional = new HashSet<exp_profesional>();
-            this.form_academica = new HashSet<form_academica>();
-            this.refer_personales = new HashSet<refer_personales>();
-            this.idiomas = new HashSet<idiomas>();
+            this.cv_exp_laboral = new HashSet<cv_exp_laboral>();
+            this.cv_form_academica = new HashSet<cv_form_academica>();
+            this.cv_idiomas = new HashSet<cv_idiomas>();
+            this.cv_ref_profesionales = new HashSet<cv_ref_profesionales>();
         }
     
         public int id_curriculum { get; set; }
-
         public int id_usuario { get; set; }
         public string fotografia { get; set; }
         public System.DateTime fechaNacimiento { get; set; }
@@ -33,16 +32,18 @@ namespace Proyecto.Models
         public string numeroTelefono { get; set; }
         public string dui { get; set; }
         public string sexo { get; set; }
+        public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidatos_ofertas> candidatos_ofertas { get; set; }
+        public virtual usuarios usuarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<exp_profesional> exp_profesional { get; set; }
+        public virtual ICollection<cv_exp_laboral> cv_exp_laboral { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<form_academica> form_academica { get; set; }
+        public virtual ICollection<cv_form_academica> cv_form_academica { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<refer_personales> refer_personales { get; set; }
+        public virtual ICollection<cv_idiomas> cv_idiomas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<idiomas> idiomas { get; set; }
+        public virtual ICollection<cv_ref_profesionales> cv_ref_profesionales { get; set; }
     }
 }

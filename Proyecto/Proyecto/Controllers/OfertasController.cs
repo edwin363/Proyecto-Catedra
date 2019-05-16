@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Diagnostics;
 
 namespace Proyecto.Controllers
 {
@@ -12,12 +13,36 @@ namespace Proyecto.Controllers
     {
         EmpleadosModel empleadomodel = new EmpleadosModel();
         ofertasModel model = new ofertasModel();
+        institucionesModel modelInstituciones = new institucionesModel();
 
         // GET: Ofertas
         public ActionResult Index()
         {
-            return View(model.List());
+            //return View(model.List());
+            usuarios user = new usuarios();
+            user = (usuarios)Session["usuario"];
+            Debug.WriteLine(user.id_usuario);
+            int userid = user.id_usuario;
+            empleados emple = new empleados();
+            emple = empleadomodel.getEmpleado(userid);
+            //Debug.WriteLine(user.id_usuario);
+            Debug.WriteLine(emple.id_empleado);
+            int id = emple.id_empleado;
+            Debug.WriteLine(id);
+            List<ofertas> oferta = new List<ofertas>();
+            oferta = model.ofertasToUser(id);
+            if (oferta != null)
+            {
+                return View(oferta.ToList());
+            }
+            else
+            {
+                Debug.WriteLine("Error");
+                return View();
+            }
         }
+
+
 
         // GET: Ofertas/Details/5
         public ActionResult Details(int? id)
@@ -43,10 +68,23 @@ namespace Proyecto.Controllers
 
         // POST: Ofertas/Create
         [HttpPost]
-        public ActionResult Create(ofertas oferta)
+        public ActionResult Create(ofertas oferta, string date, string date2)
         {
+            
             try
             {
+                usuarios user = new usuarios();
+                user = (usuarios)Session["usuario"];
+                Debug.WriteLine(user.id_usuario);
+                int userid = user.id_usuario;
+                empleados emple = new empleados();
+                emple = empleadomodel.getEmpleado(userid);
+                //Debug.WriteLine(user.id_usuario);
+                Debug.WriteLine(emple.id_empleado);
+                int id = emple.id_empleado;
+                oferta.id_empleado = id;
+                oferta.fecha_publicacion = Convert.ToDateTime(date);
+                oferta.fecha_finalizacion = Convert.ToDateTime(date2);
                 // TODO: Add insert logic here
                 if (ModelState.IsValid)
                 {

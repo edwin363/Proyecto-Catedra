@@ -10,7 +10,7 @@ using Proyecto.Models;
 public class DefaultController : Controller
 {
     ofertasModel model = new ofertasModel();
-    empleadosModel model2 = new empleadosModel();
+    EmpleadosModel model2 = new EmpleadosModel();
         // GET: Default
         public ActionResult Index()
         {

@@ -17,7 +17,7 @@ namespace Proyecto.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public exp_profesional()
         {
-            this.curriculum = new HashSet<curriculum>();
+            this.cv_exp_laboral = new HashSet<cv_exp_laboral>();
         }
     
         public int id_exp_profesional { get; set; }
@@ -29,6 +29,6 @@ namespace Proyecto.Models
         public decimal salario { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<curriculum> curriculum { get; set; }
+        public virtual ICollection<cv_exp_laboral> cv_exp_laboral { get; set; }
     }
 }
