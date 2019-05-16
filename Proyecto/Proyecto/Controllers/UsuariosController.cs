@@ -92,11 +92,66 @@ namespace Proyecto.Controllers
             }
             else
             {
-                return RedirectToAction("login");
+                ModelState.AddModelError("email", "Correo enviado");
+                recuperarContra(email);
+                return View("login",ModelState);
             }
-                //recuperarContra(email);
+        }
 
-                //return RedirectToAction("login");
+        [HttpPost]
+        public ActionResult Recuperar(string correo)
+        {
+            ViewBag.correo = correo;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AsignarContra(string email, string pass1, string pass2)
+        {
+            if (String.IsNullOrWhiteSpace(pass1))
+            {
+                ModelState.AddModelError("password", "Debes ingresar una nueva contraseña");
+            }
+            if (String.IsNullOrWhiteSpace(pass2))
+            {
+                ModelState.AddModelError("password", "Debes ingresar la confirmacion de la contraseña");
+            }
+            if (pass1 != pass2)
+            {
+                ModelState.AddModelError("password", "La contraseña de confirmación no coinciden con la nueva contraseña ingresada");
+            }
+            if (!ModelState.IsValid)
+            {
+                return View(ModelState);
+            }
+            
+            usuarios user = model.recuperarContra(email);
+            if (user == null)
+            {
+                //Si llega a este punto es porq la validacion de RecuperarContrasena lo dejo pasar
+                ModelState.AddModelError("email", "El email que ha ingresado no existe en nuestra base de datos");
+                return View(ModelState);
+            }
+            else
+            {
+                try
+                {
+                    user.password = pass1;
+                    if (model.Update(user, user.id_usuario) > 0)
+                    {
+                        ModelState.AddModelError("email", "Su contraseña ha sido restablecida");
+                        return View("login", ModelState);
+                    }
+                    ModelState.AddModelError("email", "ERROR");
+                    return View("login", ModelState);
+                }
+                catch
+                {
+                    ModelState.AddModelError("email", "ERROR 2");
+                    return View("login", ModelState);
+                }
+                
+            }
         }
 
         public void recuperarContra(string emailDestino)
@@ -112,7 +167,7 @@ namespace Proyecto.Controllers
             msg.Body = string.Format("<h2>Bolsa de Trabajo</h2>" +
                 "<p>Si quieres recuperar la contraseña de click en el boton recuperar.</p>" +
                 "<br>" +
-                "<form action='aloha' method='POST'>" +
+                "<form action='http://localhost:51489/Usuarios/Recuperar' method='POST'>" +
                 "<input type='hidden' value='{0}' id='correo' name='correo' />" +
                 "<button type='submit'>Recuperar</button>" +
                 "" +

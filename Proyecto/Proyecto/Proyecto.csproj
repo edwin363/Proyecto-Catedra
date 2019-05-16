@@ -134,7 +134,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CurriculumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngresarCandidatoController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -171,6 +173,20 @@
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\curriculumModel.cs" />
+    <Compile Include="Models\cv_exp_laboral.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cv_FormacionModel.cs" />
+    <Compile Include="Models\cv_form_academica.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cv_IdiomaModel.cs" />
+    <Compile Include="Models\cv_idiomas.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cv_ref_profesionales.cs">
+      <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\detalle_permisos.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
@@ -190,6 +206,7 @@
     <Compile Include="Models\idiomas.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\idiomasModel.cs" />
     <Compile Include="Models\instituciones.cs">
       <DependentUpon>BolsaTrabajoModel.tt</DependentUpon>
     </Compile>
@@ -278,6 +295,13 @@
     <Content Include="Views\Usuarios\login.cshtml" />
     <Content Include="Views\Home\enviarCorreo.cshtml" />
     <Content Include="Views\Usuarios\RecuperarContrasena.cshtml" />
+    <Content Include="Views\IngresarCandidato\Create.cshtml" />
+    <Content Include="Views\Usuarios\Recuperar.cshtml" />
+    <Content Include="Views\Usuarios\AsignarContra.cshtml" />
+    <Content Include="Views\IngresarCandidato\Validar.cshtml" />
+    <Content Include="Views\Curriculum\Index.cshtml" />
+    <Content Include="Views\Curriculum\Idioma.cshtml" />
+    <Content Include="Views\Curriculum\FormacionAcademica.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

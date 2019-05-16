@@ -20,9 +20,10 @@ namespace Proyecto.utils
             }
             string usuario = HttpContext.Current.User.Identity.Name;
             usuariosModel model = new usuariosModel();
-            
-            string rol = ((usuarios)HttpContext.Current.Session["user"]).tipos_usuarios.tipo_usuario;
+
+            string rol = ((usuarios)HttpContext.Current.Session["user"]).tipos_usuarios.nombre;
             return (rol.Equals(UserRole));
+         
         }
     }
 }

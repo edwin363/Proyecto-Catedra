@@ -1,0 +1,72 @@
+﻿@model Proyecto.Models.cv_idiomas
+
+@{
+    ViewBag.Title = "Idioma";
+}
+
+<h2>Crear Curriculum</h2>
+<h4>Segundo Paso: Idiomas</h4>
+
+@using (Html.BeginForm("Idioma", "Curriculum", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <h4 style="color: red;">@ViewBag.errorB</h4>
+        <div class="form-group">
+            @Html.LabelFor(model => model.id_idioma, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control" id="idioma1" name="idioma1">
+                    @foreach (var item in @ViewBag.idIdioma)
+                    {
+                        <option value="@item.id_idioma">@item.nombre</option>
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.id_idioma, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Agregar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<br />
+<div class="container" sstyle="width:100%;margin:auto;">
+    <a href="" class="btn btn-success">Siguiente</a>
+</div>
+<table class="table table-hover" style="width:50%;border: none;margin:auto;">
+    <tr>
+        <th style="text-align:center;">
+            Idiomas
+        </th>
+        <th>
+            
+        </th>
+
+    </tr>
+
+    @foreach (var item in @ViewBag.Lista)
+    {
+        <tr>
+            <td style="text-align:center;">
+                @foreach (var item1 in @ViewBag.Idiomas)
+                {
+                    if (item.id_idioma == item1.id_idioma)
+                    {
+                        @item1.nombre
+                    }
+                }
+            </td>
+            <td style="text-align:center;">
+                @Html.ActionLink("Eliminar", "Idioma", new { id = item.id_cv_idiomas }, new { @class = "btn btn-danger", @onclick = "return confirm('Esta seguro que desea eliminar este idioma?')" })
+            </td>
+        </tr>
+    }
+
+</table>

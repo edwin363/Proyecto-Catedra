@@ -17,6 +17,13 @@ namespace Proyecto.Models
         {
             return ctx.usuarios.Where(u => u.email == emailUsuario).FirstOrDefault();
         }
+
+        public usuarios validarCodigo(string codigo)
+        {
+            return ctx.usuarios.Where(u => u.codigo == codigo).FirstOrDefault();
+        }
+
+        
     }
 }
    

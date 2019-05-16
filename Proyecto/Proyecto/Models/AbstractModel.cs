@@ -80,6 +80,4 @@ public abstract class AbstractModel<T> where T:class
             return 0;
         }
     }
-
-    
 }

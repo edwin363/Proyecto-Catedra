@@ -27,7 +27,7 @@ namespace Proyecto.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<aplicacion_notas> aplicacion_notas { get; set; }
-        public virtual curriculum curriculum { get; set; }
         public virtual ofertas ofertas { get; set; }
+        public virtual curriculum curriculum { get; set; }
     }
 }

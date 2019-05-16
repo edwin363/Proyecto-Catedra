@@ -12,18 +12,13 @@ namespace Proyecto.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class idiomas
+    public partial class cv_exp_laboral
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public idiomas()
-        {
-            this.cv_idiomas = new HashSet<cv_idiomas>();
-        }
+        public int id_cv_exp_laboral { get; set; }
+        public int id_curriculum { get; set; }
+        public int id_exp_profesional { get; set; }
     
-        public int id_idioma { get; set; }
-        public string nombre { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<cv_idiomas> cv_idiomas { get; set; }
+        public virtual curriculum curriculum { get; set; }
+        public virtual exp_profesional exp_profesional { get; set; }
     }
 }
