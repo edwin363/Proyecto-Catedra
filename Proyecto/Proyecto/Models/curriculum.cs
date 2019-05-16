@@ -11,7 +11,8 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class curriculum
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,12 +27,35 @@ namespace Proyecto.Models
         }
     
         public int id_curriculum { get; set; }
+
+        [Required(ErrorMessage = "Ingrese el usuario")]
+        [Display(Name = "Usuario")]
         public int id_usuario { get; set; }
+
+        [Required(ErrorMessage = "Ingrese su fotografia")]
+        [Display(Name = "Fotografia")]
         public string fotografia { get; set; }
+
+        [Required(ErrorMessage = "Ingrese su fecha de nacimiento")]
+        [Display(Name = "Fecha nacimiento")]
         public System.DateTime fechaNacimiento { get; set; }
+
+        [Required(ErrorMessage = "Ingrese su dirección")]
+        [Display(Name = "Dirección")]
         public string direccion { get; set; }
+
+        [Required(ErrorMessage = "Ingrese su telefono")]
+        [Display(Name = "Telefono")]
+        [RegularExpression(@"[267]\d{3}-\d{4}$", ErrorMessage = "Formato de telefono incorrecto")]
         public string numeroTelefono { get; set; }
+
+        [Required(ErrorMessage = "Ingrese su dui")]
+        [Display(Name = "Telefono")]
+        [RegularExpression(@"[0-9]{8}\d-\d{1}$", ErrorMessage = "Formato de dui incorrecto")]
         public string dui { get; set; }
+
+        [Required(ErrorMessage = "Ingrese su genero")]
+        [Display(Name = "Genero")]
         public string sexo { get; set; }
         public int estado { get; set; }
     

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Proyecto.Models.ofertas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de ofertas</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_puesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_contrato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero_plazas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empleados.instituciones.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salario_oferta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_publicacion)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.funciones_basicas)
+        </th>        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>        
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_puesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_contrato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero_plazas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empleados.instituciones.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salario_oferta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_publicacion)
+        </td>       
+        <td>
+            @Html.DisplayFor(modelItem => item.funciones_basicas)
+        </td>        
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+        </td>
+    </tr>
+}
+
+</table>

@@ -11,7 +11,8 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class refer_personales
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,13 +20,23 @@ namespace Proyecto.Models
         {
             this.cv_ref_profesionales = new HashSet<cv_ref_profesionales>();
         }
-    
+
         public int id_referencia { get; set; }
+        [Required(ErrorMessage = "Ingrese el Nombre")]
+        [Display(Name = "Nombre")]
         public string nombre { get; set; }
+        [Required(ErrorMessage = "Ingrese el telefono")]
+        [Display(Name = "Telefono")]
+        [RegularExpression(@"[267]\d{3}-\d{4}$", ErrorMessage = "Formato de telefono incorrecto")]
         public string telefono { get; set; }
+        [Required(ErrorMessage = "Ingrese la institucion")]
+        [Display(Name = "Institucion")]
         public string institucion { get; set; }
+        [Required(ErrorMessage = "Ingrese el email")]
+        [Display(Name = "Email")]
+        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "Correo no valido")]
         public string email { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<cv_ref_profesionales> cv_ref_profesionales { get; set; }
     }

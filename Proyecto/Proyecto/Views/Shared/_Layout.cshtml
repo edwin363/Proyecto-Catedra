@@ -17,7 +17,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("GOES", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -25,13 +25,9 @@
                     <li>@Html.ActionLink("Instituciones", "Index", "Instituciones")</li>
                     <li>@Html.ActionLink("Ofertas", "Index", "Ofertas")</li>
                     <li>@Html.ActionLink("Criterios de Evaluación", "Index", "OfertasCriterios")</li>
-
                     <li>@Html.ActionLink("CV", "Index", "Curriculum")</li>
-
                     <li>@Html.ActionLink("Mis ofertas", "Index", "Default")</li>
-
                     <li>@Html.ActionLink("Ofertas edw", "ofertToList", "Default")</li>
-
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>@Html.RouteLink("Cerrar session (" + User.Identity.Name + ")", "logout")</li>

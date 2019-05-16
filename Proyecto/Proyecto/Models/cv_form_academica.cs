@@ -11,11 +11,18 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class cv_form_academica
     {
         public int id_cv_form_academica { get; set; }
+
+        [Required(ErrorMessage = "Ingrese su curriculum")]
+        [Display(Name = "Curriculum")]
         public int id_curriculum { get; set; }
+
+        [Required(ErrorMessage = "Ingrese su formación academica")]
+        [Display(Name = "Curriculum")]
         public int id_form_academica { get; set; }
     
         public virtual curriculum curriculum { get; set; }

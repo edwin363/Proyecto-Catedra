@@ -11,7 +11,8 @@ namespace Proyecto.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class empleados
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,13 @@ namespace Proyecto.Models
         }
     
         public int id_empleado { get; set; }
+
+        [Required(ErrorMessage = "Ingrese su usuario")]
+        [Display(Name = "Usuario")]
         public int id_usuario { get; set; }
+
+        [Required(ErrorMessage = "Ingrese su institución")]
+        [Display(Name = "Institución")]
         public int id_institucion { get; set; }
     
         public virtual usuarios usuarios { get; set; }
