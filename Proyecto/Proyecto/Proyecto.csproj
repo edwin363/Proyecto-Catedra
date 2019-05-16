@@ -134,6 +134,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CandidatosOfertasController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\CriteriosController.cs" />
     <Compile Include="Controllers\IngresarCandidatoController.cs" />
@@ -308,6 +309,7 @@
     <Content Include="Views\Usuarios\RecuperarContrasena.cshtml" />
     <Content Include="Views\IngresarCandidato\Create.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
+
     <Content Include="Views\Instituciones\Index.cshtml" />
     <Content Include="Views\Instituciones\Create.cshtml" />
     <Content Include="Views\Instituciones\Edit.cshtml" />
@@ -322,6 +324,12 @@
     <Content Include="Views\Curriculum\Index.cshtml" />
     <Content Include="Views\Curriculum\Idioma.cshtml" />
     <Content Include="Views\Curriculum\FormacionAcademica.cshtml" />
+
+    <Content Include="Views\Default\ofertToList.cshtml" />
+    <Content Include="Views\Default\candiToOfert.cshtml" />
+    <Content Include="Views\Default\candiToAp.cshtml" />
+    <Content Include="Views\Default\Details.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
