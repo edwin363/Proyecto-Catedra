@@ -18,6 +18,7 @@ namespace Proyecto.Models
         public usuarios()
         {
             this.empleados = new HashSet<empleados>();
+            this.curriculum = new HashSet<curriculum>();
         }
     
         public int id_usuario { get; set; }
@@ -33,5 +34,7 @@ namespace Proyecto.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<empleados> empleados { get; set; }
         public virtual tipos_usuarios tipos_usuarios { get; set; }
+
+        public virtual ICollection<curriculum> curriculum { get; set; }
     }
 }

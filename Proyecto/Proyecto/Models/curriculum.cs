@@ -22,6 +22,7 @@ namespace Proyecto.Models
             this.form_academica = new HashSet<form_academica>();
             this.refer_personales = new HashSet<refer_personales>();
             this.idiomas = new HashSet<idiomas>();
+            this.usuarios = new HashSet<usuarios>();
         }
     
         public int id_curriculum { get; set; }
@@ -43,5 +44,7 @@ namespace Proyecto.Models
         public virtual ICollection<refer_personales> refer_personales { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<idiomas> idiomas { get; set; }
+
+        public virtual ICollection<usuarios> usuarios { get; set; }
     }
 }
