@@ -8,9 +8,5 @@ namespace Proyecto.Models
 {
     public class ofertasModel : AbstractModel<ofertas>
     {
-        public List<ofertas> ofertasToUser(int id)
-        {
-            return ctx.ofertas.Where(u => u.id_empleado == id).ToList();
-        }
     }
 }
