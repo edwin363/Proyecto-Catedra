@@ -56,14 +56,14 @@
         <EntityTypeShape EntityType="bolsaTrabajoModel.cv_idiomas" Width="1.5" PointX="10.5" PointY="15.375" />
         <EntityTypeShape EntityType="bolsaTrabajoModel.cv_ref_profesionales" Width="1.5" PointX="7.5" PointY="15.75" />
 =======
-        <EntityTypeShape EntityType="bolsaTrabajoModel.instituciones" Width="1.5" PointX="5.375" PointY="0.875" />
-        <AssociationConnector Association="bolsaTrabajoModel.FK__empleados__id_in__239E4DCF" />
-        <EntityTypeShape EntityType="bolsaTrabajoModel.curriculum" Width="1.5" PointX="5.25" PointY="8.75" />
-        <EntityTypeShape EntityType="bolsaTrabajoModel.cv_exp_laboral" Width="1.5" PointX="7.5" PointY="6.25" />
-        <EntityTypeShape EntityType="bolsaTrabajoModel.cv_form_academica" Width="1.5" PointX="7.5" PointY="13" />
-        <EntityTypeShape EntityType="bolsaTrabajoModel.cv_idiomas" Width="1.5" PointX="7.5" PointY="16.375" />
-        <EntityTypeShape EntityType="bolsaTrabajoModel.cv_ref_profesionales" Width="1.5" PointX="10.5" PointY="13.75" />
->>>>>>> Luis
+        
+        
+        
+        
+        
+        
+        
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; Luis
         <AssociationConnector Association="bolsaTrabajoModel.FK__candidato__id_cu__440B1D61" />
         <AssociationConnector Association="bolsaTrabajoModel.FK__curriculu__id_us__286302EC" />
         <AssociationConnector Association="bolsaTrabajoModel.FK__cv_exp_la__id_cu__2F10007B" />

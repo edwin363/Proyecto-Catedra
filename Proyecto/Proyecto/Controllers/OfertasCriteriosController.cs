@@ -14,7 +14,7 @@ namespace Proyecto.Controllers
         ofertas_criteriosModel model = new ofertas_criteriosModel();
         ofertasModel ofertamodel = new ofertasModel();
         CriteriosModel criteriomodel = new CriteriosModel();
-        EmpleadosModel empleadomodel = new EmpleadosModel();
+        empleadosModel empleadomodel = new empleadosModel();
 
         // GET: OfertasCriterios
         public ActionResult Index()

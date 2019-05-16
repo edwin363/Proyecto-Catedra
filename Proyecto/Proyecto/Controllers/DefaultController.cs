@@ -13,7 +13,7 @@ public class DefaultController : Controller
     usuariosModel model5 = new usuariosModel();
     ofertasModel model = new ofertasModel();
 
-    EmpleadosModel model2 = new EmpleadosModel();
+    empleadosModel model2 = new empleadosModel();
     curriculumModel model3 = new curriculumModel();
     candidatos_ofertasModel model4 = new candidatos_ofertasModel();
     

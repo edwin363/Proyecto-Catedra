@@ -11,7 +11,7 @@ namespace Proyecto.Controllers
 {
     public class OfertasController : Controller
     {
-        EmpleadosModel empleadomodel = new EmpleadosModel();
+        empleadosModel empleadomodel = new empleadosModel();
         ofertasModel model = new ofertasModel();
         institucionesModel modelInstituciones = new institucionesModel();
 
