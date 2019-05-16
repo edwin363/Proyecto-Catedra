@@ -10,7 +10,7 @@ namespace Proyecto.Models
         public usuarios CheckLogin(string user, string password)
         {
             string pass = SecurityUtils.EncriptarSHA2(password);
-            return ctx.usuarios.Where(u => u.nombre == user && u.password == pass).FirstOrDefault();
+            return ctx.usuarios.Where(u => u.nombre == user && u.password == pass && u.estado == 1).FirstOrDefault();
         }
 
         public usuarios recuperarContra(string emailUsuario)

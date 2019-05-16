@@ -1,4 +1,5 @@
 ﻿using Proyecto.Models;
+using Proyecto.utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,29 +9,34 @@ using System.Web.Mvc;
 
 namespace Proyecto.Controllers
 {
+    [Authorize]
     public class CriteriosController : Controller
     {
         CriteriosModel model = new CriteriosModel();
 
         // GET: Criterios
+        [AuthorizeUserLevel(UserRole = "Personal de recursos humanos")]
         public ActionResult Index()
         {
             return View(model.List());
         }
 
         // GET: Criterios/Details/5
+        [AuthorizeUserLevel(UserRole = "Personal de recursos humanos")]
         public ActionResult Details(int id)
         {
             return View();
         }
 
         // GET: Criterios/Create
+        [AuthorizeUserLevel(UserRole = "Personal de recursos humanos")]
         public ActionResult Create()
         {
             return View();
         }
 
         // POST: Criterios/Create
+        [AuthorizeUserLevel(UserRole = "Personal de recursos humanos")]
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -47,6 +53,7 @@ namespace Proyecto.Controllers
         }
 
         // GET: Criterios/Edit/5
+        [AuthorizeUserLevel(UserRole = "Personal de recursos humanos")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -62,6 +69,7 @@ namespace Proyecto.Controllers
         }
 
         // POST: Criterios/Edit/5
+        [AuthorizeUserLevel(UserRole = "Personal de recursos humanos")]
         [HttpPost]
         public ActionResult Edit(criterios criterio)
         {
@@ -86,6 +94,7 @@ namespace Proyecto.Controllers
         }
 
         // GET: Criterios/Delete/5
+        [AuthorizeUserLevel(UserRole = "Personal de recursos humanos")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,6 +119,7 @@ namespace Proyecto.Controllers
         }
 
         // POST: Criterios/Delete/5
+        [AuthorizeUserLevel(UserRole = "Personal de recursos humanos")]
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

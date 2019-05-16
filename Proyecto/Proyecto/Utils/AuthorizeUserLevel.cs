@@ -22,8 +22,6 @@ namespace Proyecto.utils
             usuariosModel model = new usuariosModel();
             string rol = ((usuarios)HttpContext.Current.Session["user"]).tipos_usuarios.nombre;
             return (rol.Equals(UserRole));
-         
-
         }
     }
 }

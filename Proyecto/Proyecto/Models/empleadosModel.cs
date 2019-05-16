@@ -6,6 +6,7 @@ using System.Web;
 
 namespace Proyecto
 {
+
     public class empleadosModel : AbstractModel<empleados>
     {
         public empleados getEmpleado(int id)

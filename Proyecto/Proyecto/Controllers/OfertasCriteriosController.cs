@@ -1,4 +1,5 @@
 ﻿using Proyecto.Models;
+using Proyecto.utils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,58 +10,77 @@ using System.Web.Mvc;
 
 namespace Proyecto.Controllers
 {
+    [Authorize]
     public class OfertasCriteriosController : Controller
     {
+        
         ofertas_criteriosModel model = new ofertas_criteriosModel();
         ofertasModel ofertamodel = new ofertasModel();
         CriteriosModel criteriomodel = new CriteriosModel();
         empleadosModel empleadomodel = new empleadosModel();
+        
 
         // GET: OfertasCriterios
+
         public ActionResult Index()
         {
-            return View(model.List());
+            usuarios us = (usuarios)Session["usuario"];
+            if (us.id_tipo_usuario == 3)
+            {
+                return View(model.List());
+            }
+            return RedirectToAction("Index","Home");
         }
 
         // GET: OfertasCriterios/Details/5
+        
         public ActionResult Details(int id)
         {
-            return View();
+            usuarios us = (usuarios)Session["usuario"];
+            if (us.id_tipo_usuario == 3)
+            {
+                return View();
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: OfertasCriterios/Create
+        
         public ActionResult Create()
         {
-            //Obteniendo ofertas del empleado logueado
-            usuarios user = new usuarios();
-            user = (usuarios)Session["usuario"];
-            int userid = user.id_usuario;
-            empleados emple = new empleados();
-            emple = empleadomodel.getEmpleado(userid);
-            int id = emple.id_empleado;
-            List<ofertas> oferta = new List<ofertas>();
-            oferta = ofertamodel.ofertasToUser(id);
-            
-            
-            
-            if (oferta != null)
+            usuarios us = (usuarios)Session["usuario"];
+            if(us.id_tipo_usuario == 3)
             {
-                ViewBag.listaCriterios = new SelectList(criteriomodel.List(), "id_criterio", "nombre_criterio");
-                ViewBag.listaOfertas = new SelectList(oferta.ToList(), "id_oferta", "nombre_puesto");
-                return View();
-            }
-            else
-            {
-                //Debug.WriteLine("Error");
-                return View();
-            }
+                //Obteniendo ofertas del empleado logueado
+                usuarios user = new usuarios();
+                user = (usuarios)Session["usuario"];
+                int userid = user.id_usuario;
+                empleados emple = new empleados();
+                emple = empleadomodel.getEmpleado(userid);
+                int id = emple.id_empleado;
+                List<ofertas> oferta = new List<ofertas>();
+                oferta = ofertamodel.ofertasToUser(id);
 
 
-           
-            
+
+                if (oferta != null)
+                {
+                    ViewBag.listaCriterios = new SelectList(criteriomodel.List(), "id_criterio", "nombre_criterio");
+                    ViewBag.listaOfertas = new SelectList(oferta.ToList(), "id_oferta", "nombre_puesto");
+                    return View();
+                }
+                else
+                {
+                    //Debug.WriteLine("Error");
+                    return View();
+                }
+            }
+            return RedirectToAction("Index", "Home");
+
         }
 
         // POST: OfertasCriterios/Create
+        
         [HttpPost]
         public ActionResult Create(ofertas_criterios oferta_criterio)
         {
@@ -114,6 +134,7 @@ namespace Proyecto.Controllers
         }
 
         // GET: OfertasCriterios/Edit/5
+        
         public ActionResult Edit(int? id)
         {
             //Obteniendo ofertas del empleado logueado
@@ -152,6 +173,7 @@ namespace Proyecto.Controllers
         }
 
         // POST: OfertasCriterios/Edit/5
+        
         [HttpPost]
         public ActionResult Edit(ofertas_criterios oferta_criterio)
         {
@@ -212,6 +234,7 @@ namespace Proyecto.Controllers
         }
 
         // GET: OfertasCriterios/Delete/5
+        
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -236,6 +259,7 @@ namespace Proyecto.Controllers
         }
 
         // POST: OfertasCriterios/Delete/5
+        
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

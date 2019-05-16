@@ -8,6 +8,7 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using PagedList;
 
 namespace Proyecto.Controllers
 {
@@ -26,13 +27,57 @@ namespace Proyecto.Controllers
 
         // GET: Empleados
         [Route("verempleados")]
-        public ActionResult VerEmpleados()
+        public ActionResult VerEmpleados(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            //empleados que pertenecen a bk
-            var empleadosbk = ctx.usuarios.Join(ctx.empleados, usu => usu.id_usuario,
-                emp => emp.id_usuario, (usu, emp) => new { usu, emp }).FirstOrDefault(x => x.emp.id_institucion == 1);
+            //paginacion
+            ViewBag.CurrentSort = sortOrder;
 
-            return View(model.List());
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+            //empleados que pertenecen al id actual
+            //   var empleadosbk = ctx.usuarios.Join(ctx.empleados, usu => usu.id_usuario,
+            //     emp => emp.id_usuario, (usu, emp) => new { usu, emp }).First(x => x.emp.id_institucion == Convert.ToInt32(Session["idIn"]));
+
+            var students = from s in ctx.usuarios
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.nombre.Contains(searchString)
+                                       || s.apellido1.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    students = students.OrderByDescending(s => s.nombre);
+                    break;
+                case "Date":
+                    students = students.OrderBy(s => s.apellido1);
+                    break;
+                case "date_desc":
+                    students = students.OrderByDescending(s => s.apellido2);
+                    break;
+                default:  // Name ascending 
+                    students = students.OrderBy(s => s.email);
+                    break;
+            }
+
+
+            //no se como ponerlo en la vista
+            ///return View(empleadosbk.ToList());
+            //paginacion
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(students.ToPagedList(pageNumber, pageSize));
+
+            //return View(model.List());
         }
 
 
@@ -63,6 +108,16 @@ namespace Proyecto.Controllers
             {
                 FormsAuthentication.SetAuthCookie(usuario, false);
                 Session["usuario"] = user;
+                //id del usuario
+                var idActual = ctx.usuarios.Where(x => x.nombre.Equals(usuario))
+                       .FirstOrDefault().id_usuario;
+                //id de la institucion
+                Session["idIn"] = ctx.empleados.Where(x => x.id_usuario == idActual)
+                       .FirstOrDefault().id_institucion;
+                //nombre
+                Session["nameIn"] = ctx.empleados.Where(x => x.id_usuario == idActual)
+                       .FirstOrDefault().instituciones.nombre;
+
                 if (returnURL == null)
                 {
                     return Redirect("Home/Index");
@@ -88,20 +143,23 @@ namespace Proyecto.Controllers
         {
             return View();
         }
+        // GET: empleados/create
+        public ActionResult Create()
+        {
+            return View();
+        }
 
         // POST: empleados/Create
         [HttpPost]
         public ActionResult Create(usuarios empleado, empleados asignando)
         {
-
             empleado.id_tipo_usuario = 3;//tipo empleado
             empleado.password = (SecurityUtils.EncriptarSHA2(empleado.password));//emcriptando contraseña
             empleado.estado = 1;
             empleado.codigo = "default";
 
-            //asignando empleado a la institucion actual
-            asignando.id_usuario = empleado.id_usuario;
-            asignando.id_institucion = 1;//insitucion actual
+
+
 
             try
             {
@@ -109,10 +167,20 @@ namespace Proyecto.Controllers
                 {
                     if (model.Insert(empleado) > 0)
                     {
-                        modelemp.Insert(asignando);
-                        TempData["successMessage"] = "Candidato Ingresado con exito";
-                        return RedirectToAction("verempleados");
+                        //asignando empleado a la institucion actual
+                        //obtenemos el id anterios
+                        asignando.id_usuario = ctx.usuarios.OrderByDescending(x => x.id_usuario).First().id_usuario;
+                        //obteniendo el id del admin logueado
+                        asignando.id_institucion = Convert.ToInt32(Session["idIn"]);
+                        if (modelemp.Insert(asignando) > 0)
+                        {
+
+                            TempData["successMessage"] = "Empleado ingresado con exito";
+                            return View("verempleados");
+                        }
                     }
+
+
                     TempData["successMessage"] = "Error al ingresar el candidato";
                 }
                 return View(empleado);
@@ -132,25 +200,47 @@ namespace Proyecto.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             usuarios tipo = model.GetById(id);
+            //id de usuario en empleados
+            var idemp = ctx.empleados.Where(x => x.id_usuario == id)
+                       .FirstOrDefault().id_empleado;
+
+
             if (tipo == null)
             {
                 TempData["errorMessage"] = "No existe este empleado";
-                return RedirectToAction("Index");
+                return RedirectToAction("verempleados");
             }
-            if (model.Remove(id) > 0)
+            if (modelemp.Remove(idemp) > 0 && model.Remove(id) > 0)
             {
                 TempData["succesMessage"] = " Empleado eliminado";
+                return RedirectToAction("verempleados");
             }
             else
             {
                 //las relaciones no dejan
-                TempData["errorMessage"] = "No se puede eliminar este cliente";
+                TempData["errorMessage"] = "No se puede eliminar este empleado";
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("verempleados");
         }
 
-        
-        
+        // POST: empleado/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
+
         [HttpPost]
         public ActionResult RecuperarContrasena(string email)
         {
@@ -214,7 +304,7 @@ namespace Proyecto.Controllers
             {
                 try
                 {
-                    user.password = pass1;
+                    user.password = SecurityUtils.EncriptarSHA2(pass1);
                     if (model.Update(user, user.id_usuario) > 0)
                     {
                         ModelState.AddModelError("email", "Su contraseña ha sido restablecida");

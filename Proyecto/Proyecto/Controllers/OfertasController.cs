@@ -6,9 +6,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Diagnostics;
+using Proyecto.utils;
 
 namespace Proyecto.Controllers
 {
+    [Authorize]
     public class OfertasController : Controller
     {
         empleadosModel empleadomodel = new empleadosModel();
@@ -16,6 +18,7 @@ namespace Proyecto.Controllers
         institucionesModel modelInstituciones = new institucionesModel();
 
         // GET: Ofertas
+        [AuthorizeUserLevel(UserRole = "Personal de recursos humanos")]
         public ActionResult Index()
         {
             //return View(model.List());

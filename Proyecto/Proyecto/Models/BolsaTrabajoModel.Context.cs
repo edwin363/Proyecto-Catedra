@@ -37,7 +37,6 @@ namespace Proyecto.Models
         public virtual DbSet<permisos> permisos { get; set; }
         public virtual DbSet<refer_personales> refer_personales { get; set; }
         public virtual DbSet<tipos_usuarios> tipos_usuarios { get; set; }
-        public virtual DbSet<usuarios> usuarios { get; set; }
         public virtual DbSet<idiomas> idiomas { get; set; }
         public virtual DbSet<instituciones> instituciones { get; set; }
         public virtual DbSet<curriculum> curriculum { get; set; }
@@ -45,5 +44,6 @@ namespace Proyecto.Models
         public virtual DbSet<cv_form_academica> cv_form_academica { get; set; }
         public virtual DbSet<cv_idiomas> cv_idiomas { get; set; }
         public virtual DbSet<cv_ref_profesionales> cv_ref_profesionales { get; set; }
+        public virtual DbSet<usuarios> usuarios { get; set; }
     }
 }

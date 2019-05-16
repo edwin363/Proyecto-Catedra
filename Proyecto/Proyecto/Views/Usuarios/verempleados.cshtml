@@ -1,53 +1,58 @@
-﻿@model IEnumerable<Proyecto.Models.usuarios>
+﻿
+@model PagedList.IPagedList<Proyecto.Models.usuarios>
+    @using PagedList.Mvc;
 
-@{
-    ViewBag.Title = "verempleados";
-}
+    @{
 
-<h2>verempleados</h2>
+        ViewBag.Title = "Empleados";
+    }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.apellido1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.apellido2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.email)
-        </th>
-        <th></th>
-    </tr>
+    <h2> Burguer King</h2>
+        <h3>Empleados</h3>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    @using (Html.BeginForm("Index", "Student", FormMethod.Get))
+    {
+        <p>
+            Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <input type="submit" value="Search" />
+        </p>
+    }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("Apellido", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                @Html.ActionLink("Email", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(odelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apellido1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id_usuario }, new { @class = "btn btn-danger", @onclick = "return confirm('Esta seguro que desea borrar este tipo de empleado?')" })
+                </td>
+            </tr>
+        }
 
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.apellido1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.apellido2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.email)
-        </td>
-
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */}) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=item.id_usuario  })
-        </td>
-    </tr>
-}
-
-</table>
+    </table>
+    <br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("verempleados",
+        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

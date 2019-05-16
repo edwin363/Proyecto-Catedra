@@ -18,8 +18,8 @@ namespace Proyecto.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public usuarios()
         {
-            this.empleados = new HashSet<empleados>();
             this.curriculum = new HashSet<curriculum>();
+            this.empleados = new HashSet<empleados>();
         }
 
         public int id_usuario { get; set; }
@@ -28,8 +28,10 @@ namespace Proyecto.Models
         [Display(Name = "Nombre")]
         public string nombre { get; set; }
 
+
         [Display(Name = "Contraseña")]
         [Required(ErrorMessage = "Ingrese la contraseña")]
+
         public string password { get; set; }
 
         [Display(Name = "Email")]
@@ -40,6 +42,7 @@ namespace Proyecto.Models
         [Display(Name = "Tipo de usuario")]
         [Required(ErrorMessage = "Ingrese el tipo de usuario")]
         public int id_tipo_usuario { get; set; }
+
 
         [Display(Name = "Primer Apellido")]
         [Required(ErrorMessage = "Ingrese el primer apellido")]
@@ -52,14 +55,12 @@ namespace Proyecto.Models
         [Display(Name = "Estado")]
         [Required(ErrorMessage = "Seleccione el estado")]
         public Nullable<int> estado { get; set; }
-
         public string codigo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<curriculum> curriculum { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<empleados> empleados { get; set; }
         public virtual tipos_usuarios tipos_usuarios { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-        public virtual ICollection<curriculum> curriculum { get; set; }
     }
 }

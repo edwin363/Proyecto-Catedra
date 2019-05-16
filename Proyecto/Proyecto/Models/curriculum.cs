@@ -23,7 +23,6 @@ namespace Proyecto.Models
             this.cv_form_academica = new HashSet<cv_form_academica>();
             this.cv_idiomas = new HashSet<cv_idiomas>();
             this.cv_ref_profesionales = new HashSet<cv_ref_profesionales>();
-
         }
     
         public int id_curriculum { get; set; }
@@ -61,7 +60,6 @@ namespace Proyecto.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<candidatos_ofertas> candidatos_ofertas { get; set; }
-        public virtual usuarios usuarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<cv_exp_laboral> cv_exp_laboral { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -70,6 +68,6 @@ namespace Proyecto.Models
         public virtual ICollection<cv_idiomas> cv_idiomas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<cv_ref_profesionales> cv_ref_profesionales { get; set; }
-
+        public virtual usuarios usuarios { get; set; }
     }
 }
